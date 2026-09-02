@@ -2,14 +2,14 @@
 
 Cada entrega é **um item de menu** em `mkdocs.yml`. O que fica do lado direito dos dois
 pontos pode ser um Markdown, um notebook ou uma URL — e o Material renderiza os três do
-mesmo jeito na navegação.
+mesmo jeito na navegação. Itens podem ficar soltos no topo do menu ou agrupados numa
+seção (indente-os sob um título, como o `Projeto:` do template).
 
 ``` { .yaml .copy title="mkdocs.yml" }
 nav:
-  - Exercícios:
-    - 1. Data: exercises/data/index.md                       # (1)!
-    - 2. Perceptron: exercises/perceptron/index.ipynb        # (2)!
-    - 3. MLP: https://colab.research.google.com/drive/1AbC   # (3)!
+  - Data: exercises/data/index.md                          # (1)!
+  - Perceptron: exercises/perceptron/index.ipynb           # (2)!
+  - MLP: https://colab.research.google.com/drive/1AbC      # (3)!
 ```
 
 1.  **Markdown** — o formato esperado pelo enunciado. Caminho relativo a `docs/`.
@@ -50,8 +50,7 @@ Coloque o `.ipynb` dentro de `docs/` e aponte a nav para ele:
 
 ``` { .yaml .copy title="mkdocs.yml" }
 nav:
-  - Exemplos de uso:
-    - Notebook no menu: examples/notebook/data-exercise-1.ipynb
+  - Notebook no menu: examples/notebook/data-exercise-1.ipynb
 ```
 
 O resultado está em [Notebook no menu](notebook/data-exercise-1.ipynb).
@@ -68,8 +67,7 @@ Uma URL absoluta na nav vira um item que abre em outra aba:
 
 ``` { .yaml .copy title="mkdocs.yml" }
 nav:
-  - Exemplos de uso:
-    - Abrir no Colab ↗: https://colab.research.google.com/github/usuario/ann-dl/blob/main/docs/examples/notebook/data-exercise-1.ipynb
+  - Abrir no Colab ↗: https://colab.research.google.com/github/usuario/ann-dl/blob/main/docs/examples/notebook/data-exercise-1.ipynb
 ```
 
 Duas formas de montar o endereço:

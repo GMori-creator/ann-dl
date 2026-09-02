@@ -27,9 +27,9 @@ ai_use: "none"
     pré-processamento no fim da página, e é esse plano que as duas entregas
     seguintes executam.
 
-    As aulas de [Data](https://insper.github.io/ann-dl/){:target='_blank'}
-    dão a estrutura: tipos, distribuições, qualidade, desbalanceamento, vazamento, split e
-    pré-processamento.
+    As aulas de **Classes → Data** no
+    [site da disciplina](https://insper.github.io/ann-dl/){:target='_blank'} dão a estrutura:
+    tipos, distribuições, qualidade, desbalanceamento, vazamento, split e pré-processamento.
 
 ## 1. Dataset
 

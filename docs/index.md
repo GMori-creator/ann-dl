@@ -1,4 +1,4 @@
-# Entregas — Redes Neurais Artificiais & Deep Learning
+# Redes Neurais Artificiais & Deep Learning
 
 ???+ info inline end "Edição"
 
@@ -11,12 +11,14 @@ cada exercício e cada projeto vira um item de menu, e o repositório que o gera
 da avaliação — o professor lê o site publicado **e** o repositório (Markdown, código e
 histórico do Git).
 
-## Aluno / Grupo
+## Identificação
 
-| Nome | E-mail | GitHub |
-|------|--------|--------|
-| João da Silva | joaods@al.insper.edu.br | [@joaods](https://github.com/joaods) |
-| Maria Oliveira | mariao@al.insper.edu.br | [@mariao](https://github.com/mariao) |
+Quem responde por este repositório. Os **exercícios são individuais**; a equipe do projeto
+— que pode ser diferente — fica registrada na [página do projeto](projects/index.md).
+
+| Nome completo | E-mail | GitHub |
+|---------------|--------|--------|
+| | | |
 
 !!! tip "Como usar este template"
 

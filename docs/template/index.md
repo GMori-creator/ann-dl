@@ -96,9 +96,13 @@ Antes de começar, certifique-se de que você possui os seguintes pré-requisito
 
 ## Instalando o Python
 
+Python **3.10 ou superior**. O GitHub Actions constrói o site com a versão definida em
+`PYTHON_VERSION`, no [workflow](https://github.com/usuario/ann-dl/blob/main/.github/workflows/main.yaml) —
+usar localmente a mesma versão evita surpresas entre o seu build e o do CI.
+
 === "Linux"
 
-    Instale o Python 3.8 ou superior.
+    Instale o Python 3.10 ou superior.
 
     ``` shell
     sudo apt install python3 python3-venv python3-pip
@@ -107,7 +111,7 @@ Antes de começar, certifique-se de que você possui os seguintes pré-requisito
 
 === "macOS"
 
-    Instale o Python 3.8 ou superior.
+    Instale o Python 3.10 ou superior.
 
     ``` shell
     brew install python
@@ -116,7 +120,7 @@ Antes de começar, certifique-se de que você possui os seguintes pré-requisito
 
 === "Windows"
 
-    Instale o Python 3.13 ou superior. Baixe o instalador do site oficial do Python ([https://www.python.org/downloads/](https://www.python.org/downloads/){:target="_blank"}) e execute-o. Certifique-se de marcar a opção "Add Python to PATH" durante a instalação.
+    Instale o Python 3.10 ou superior. Baixe o instalador do site oficial do Python ([https://www.python.org/downloads/](https://www.python.org/downloads/){:target="_blank"}) e execute-o. Certifique-se de marcar a opção "Add Python to PATH" durante a instalação.
 
     ``` shell
     python --version
@@ -124,9 +128,9 @@ Antes de começar, certifique-se de que você possui os seguintes pré-requisito
 
 ---
 
-## Usage
+## Instalando as dependências
 
-Para utilizar o código deste repositório, siga as instruções a seguir:
+Para rodar o site na sua máquina, siga os passos a seguir.
 
 Clone ou fork este repositório:
 

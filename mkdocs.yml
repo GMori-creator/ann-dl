@@ -114,6 +114,13 @@ plugins:
       # Sem isto, os .py de code/ virariam páginas do site
       include: ["*.ipynb"]
 
+# Além dos links, valida as âncoras (#secao) — com --strict, âncora quebrada vira erro.
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
 # Os scripts de code/ ficam no repositório e são incluídos nos relatórios via --8<--,
 # mas não são páginas da navegação.
 not_in_nav: |
@@ -139,11 +146,10 @@ nav:
 
   # A lista de entregas muda de edição para edição: acrescente ou remova itens
   # aqui e as pastas correspondentes em docs/.
-  - Exercícios:
-    - 1. Data: exercises/data/index.md
-    - 2. Perceptron: exercises/perceptron/index.md
-    - 3. MLP: exercises/mlp/index.md
-    - 4. VAE: exercises/vae/index.md
+  - Data: exercises/data/index.md
+  - Perceptron: exercises/perceptron/index.md
+  - MLP: exercises/mlp/index.md
+  - VAE: exercises/vae/index.md
 
   # O projeto é UM só, com três entregas ao longo do semestre.
   - Projeto:

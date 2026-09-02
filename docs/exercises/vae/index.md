@@ -24,6 +24,11 @@ ai_use: "none"
 
 ### Figuras
 
+![Substitua por uma figura gerada pelo seu código](figures/fig01-exemplo.svg)
+/// caption
+**Figura 1** — legenda descrevendo o que a figura mostra.
+///
+
 ### Análise
 
 ## Exercise 2

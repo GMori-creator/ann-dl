@@ -24,9 +24,9 @@ ai_use: "none"
     A equipe entrega **classificação ou regressão**, não as duas. Se a escolha foi a outra,
     apague esta pasta e a linha correspondente na `nav` do `mkdocs.yml`.
 
-O dataset e as decisões da equipe ficam na [página do projeto](../index.md). Aqui entra o
-que é específico desta tarefa. O EDA já respondeu o que há no dataset — **não repita o EDA**,
-referencie-o: [1. EDA](../eda/index.md).
+O dataset e as decisões da equipe ficam na [página do projeto](../index.md). As duas
+primeiras seções abaixo são exigidas pelo enunciado, mas o [EDA](../eda/index.md) já as
+respondeu em profundidade: **resuma e aponte para lá**, em vez de refazer a análise.
 
 ## 1. Escolha do dataset
 
