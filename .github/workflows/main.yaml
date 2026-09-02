@@ -1,7 +1,10 @@
 name: ci
 on:
-  - push
-  - pull_request
+  push:
+  pull_request:
+  # Permite disparar o build à mão em Actions > ci > Run workflow, sem precisar
+  # de um commit novo.
+  workflow_dispatch:
   
 # Environment
 env:
