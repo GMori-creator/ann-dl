@@ -7,8 +7,8 @@ mesmo jeito na navegação.
 ``` { .yaml .copy title="mkdocs.yml" }
 nav:
   - Exercícios:
-    - 1. Data: exercises/data.md                             # (1)!
-    - 2. Perceptron: exercises/perceptron.ipynb              # (2)!
+    - 1. Data: exercises/data/index.md                       # (1)!
+    - 2. Perceptron: exercises/perceptron/index.ipynb        # (2)!
     - 3. MLP: https://colab.research.google.com/drive/1AbC   # (3)!
 ```
 
@@ -17,28 +17,27 @@ nav:
     estiverem salvas no arquivo.
 3.  **Link externo** — qualquer URL absoluta vira um item que abre fora do site.
 
-!!! info "Um arquivo por exercício"
+!!! danger "Uma pasta por entrega, e o caminho é fixo"
 
-    Cada exercício é **um arquivo** direto em `docs/exercises/` — `data.md`, `perceptron.md`,
-    e assim por diante. Trocar o formato é trocar a extensão: `data.md` → `data.ipynb`, sem
-    mexer em pasta nenhuma. Scripts e imagens ficam em `docs/exercises/code/` e
-    `docs/exercises/figures/`, compartilhados pelos quatro, com o slug do exercício no nome
-    do arquivo (`data-exercise1.py`, `data-fig01.png`).
+    Cada entrega mora na própria pasta, com o relatório em `index.md` e o material em
+    `code/` e `figures/`: `docs/exercises/<slug>/index.md` e
+    `docs/projects/<slug>/index.md`. Os slugs são os do site da disciplina.
 
-    Pastas por entrega existem só no [projeto](../projects/index.md), que é maior e tem
-    material próprio.
+    Se você optar por notebook ou Colab, o arquivo entra **na mesma pasta**
+    (`docs/exercises/data/index.ipynb`) ou é linkado a partir do `index.md` — não mova a
+    entrega para fora dela.
 
 ## 1. Relatório em Markdown
 
-O caminho principal. Veja [1. Data](../exercises/data.md) preenchido como modelo:
+O caminho principal. Veja [1. Data](../exercises/data/index.md) preenchido como modelo:
 *front matter*, títulos espelhando o enunciado, figura legendada, código incluído a partir
 de `code/` e tabela *Results summary*.
 
 Para trazer um script para dentro do relatório sem copiar e colar:
 
-```` { .markdown .copy title="docs/exercises/data.md" }
-``` { .python .copy linenums='1' title="data-exercise1.py" }
-;--8<-- "docs/exercises/code/data-exercise1.py"
+```` { .markdown .copy title="docs/exercises/data/index.md" }
+``` { .python .copy linenums='1' title="exercise1.py" }
+;--8<-- "docs/exercises/data/code/exercise1_point_clouds.py"
 ```
 ````
 
@@ -113,13 +112,13 @@ Para colocar o badge dentro de uma página, em vez de no menu:
 === "Figuras"
 
     ``` { .markdown .copy }
-    ![Texto alternativo](figures/data-fig01.png)
+    ![Texto alternativo](figures/fig01-exemplo.svg)
     /// caption
     **Figura 1** — legenda descrevendo o que a figura mostra.
     ///
     ```
 
-    ![Exemplo de figura](../exercises/figures/exemplo.svg)
+    ![Exemplo de figura](../exercises/data/figures/fig01-exemplo.svg)
     /// caption
     **Figura 1** — clique na imagem para ampliar (`glightbox`).
     ///

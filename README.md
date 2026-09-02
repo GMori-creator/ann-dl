@@ -14,14 +14,12 @@ notebook `.ipynb` ou um link do Google Colab. Os três casos estão demonstrados
 docs/
   index.md                     # capa: grupo e status das entregas
   template/index.md            # como usar este template
-  exercises/                   # um arquivo por exercício, sem pasta
-    data.md
-    perceptron.md
-    mlp.md
-    vae.md
-    code/                      # scripts, com o slug no nome: data-exercise1.py
-    figures/                   # imagens, idem: data-fig01.png
-  projects/                    # aqui sim, uma pasta por entrega
+  exercises/
+    data/{index.md,code/,figures/}
+    perceptron/{index.md,code/,figures/}
+    mlp/{index.md,code/,figures/}
+    vae/{index.md,code/,figures/}
+  projects/
     index.md                   # equipe, dataset, decisões, status
     eda/{index.md,code/,figures/}
     classification/{index.md,code/,figures/}
@@ -33,9 +31,9 @@ docs/
 Os slugs de `exercises/` e `projects/` são fixos e casam com o site da disciplina. Não os
 renomeie.
 
-Exercício é **arquivo**, entrega de projeto é **pasta**: trocar o formato de um exercício é
-trocar a extensão (`data.md` → `data.ipynb`), enquanto cada entrega do projeto tem material
-próprio o bastante para justificar `code/` e `figures/` só seus.
+Cada entrega tem a própria pasta, sempre no mesmo formato: `index.md` para o relatório,
+`code/` para os scripts e `figures/` para as imagens. Um notebook entra na mesma pasta,
+como `index.ipynb`.
 
 Os nomes do grupo vão em [docs/projects/index.md](docs/projects/index.md) e se repetem no
 cabeçalho de cada entrega do projeto.

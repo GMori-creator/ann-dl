@@ -40,10 +40,10 @@ histórico do Git).
 
 ### Exercícios — individuais
 
-- [ ] [Data](exercises/data.md)
-- [ ] [Perceptron](exercises/perceptron.md)
-- [ ] [MLP](exercises/mlp.md)
-- [ ] [VAE](exercises/vae.md)
+- [ ] [Data](exercises/data/index.md)
+- [ ] [Perceptron](exercises/perceptron/index.md)
+- [ ] [MLP](exercises/mlp/index.md)
+- [ ] [VAE](exercises/vae/index.md)
 
 ### [Projeto](projects/index.md) — em equipe
 
@@ -56,7 +56,7 @@ Um projeto, um dataset, três entregas:
 ## Checklist antes de cada entrega
 
 - [ ] Repositório **público** e o GitHub Pages construindo sem erro.
-- [ ] Caminho correto: `docs/exercises/<slug>.md` (ou `docs/projects/<slug>/index.md`).
+- [ ] Caminho correto: `docs/exercises/<slug>/index.md` (ou `docs/projects/<slug>/index.md`).
 - [ ] *Front matter* com `exercise:` (ou `project:`) e `ai_use:` preenchidos.
 - [ ] Títulos espelhando a estrutura do enunciado (`## Exercise N`, `### A`, `### B`, ...).
 - [ ] Figuras commitadas em `figures/`, numeradas e exibidas no relatório.

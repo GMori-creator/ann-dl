@@ -117,7 +117,7 @@ plugins:
 # Os scripts de code/ ficam no repositório e são incluídos nos relatórios via --8<--,
 # mas não são páginas da navegação.
 not_in_nav: |
-  /exercises/code/*
+  /exercises/*/code/*
   /projects/*/code/*
 
 extra_javascript:
@@ -129,8 +129,8 @@ extra_javascript:
 #  NAVEGAÇÃO — uma entrega, um item de menu.
 #
 #  Cada item aceita três formas (veja "Exemplos de uso" para os três em ação):
-#    1. Markdown ...: exercises/data.md
-#    2. Notebook  ...: exercises/data.ipynb
+#    1. Markdown ...: exercises/data/index.md
+#    2. Notebook  ...: exercises/data/index.ipynb
 #    3. Colab     ...: https://colab.research.google.com/drive/<ID>
 # =============================================================================
 nav:
@@ -140,10 +140,10 @@ nav:
   # A lista de entregas muda de edição para edição: acrescente ou remova itens
   # aqui e as pastas correspondentes em docs/.
   - Exercícios:
-    - 1. Data: exercises/data.md
-    - 2. Perceptron: exercises/perceptron.md
-    - 3. MLP: exercises/mlp.md
-    - 4. VAE: exercises/vae.md
+    - 1. Data: exercises/data/index.md
+    - 2. Perceptron: exercises/perceptron/index.md
+    - 3. MLP: exercises/mlp/index.md
+    - 4. VAE: exercises/vae/index.md
 
   # O projeto é UM só, com três entregas ao longo do semestre.
   - Projeto:

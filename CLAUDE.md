@@ -53,12 +53,9 @@ Os slugs em `docs/exercises/` (`data`, `perceptron`, `mlp`, `vae`) e em `docs/pr
 disciplina, assim como o caminho `docs/<seção>/<slug>/index.md` e as subpastas `code/` e
 `figures/`. **Renomear qualquer um deles quebra a correção**, não só o site.
 
-Mas a forma difere entre os dois: **exercício é um arquivo** (`docs/exercises/data.md`), com
-`code/` e `figures/` compartilhados por todos os exercícios e nomes prefixados pelo slug
-(`data-exercise1.py`); **entrega de projeto é uma pasta**
-(`docs/projects/eda/{index.md,code/,figures/}`). Não uniformize os dois: a assimetria é
-deliberada — o exercício troca de formato só mudando a extensão (`data.md` → `data.ipynb`),
-e o projeto tem material próprio o bastante para justificar as subpastas. A exceção é
+**Toda entrega tem a própria pasta**, no mesmo formato: `index.md`, `code/`, `figures/` —
+exercícios e entregas de projeto igualmente. Um notebook entra na pasta como `index.ipynb`;
+não mova uma entrega para fora da sua pasta. A exceção é
 `projects/eda/`: o overview cobra a entrega de EDA, mas a disciplina não publicou página com
 esse slug — se ela aparecer com outro nome, alinhe.
 
@@ -89,7 +86,7 @@ demonstra os três e é a página a atualizar quando esse mecanismo mudar.
 
 ### Código não é copiado, é incluído
 
-`docs/exercises/data.md` é o modelo preenchido: puxa o script real de `exercises/code/` via
+`docs/exercises/data/index.md` é o modelo preenchido: puxa o script real de `code/` via
 `--8<--` do `pymdownx.snippets`, configurado com `base_path: [.]` (raiz do repositório) e
 `check_paths: true` — por isso um caminho errado derruba o build. Ao escrever `--8<--` como
 exemplo dentro de uma página, escape com `;--8<--`, senão o preprocessador o executa mesmo

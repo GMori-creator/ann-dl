@@ -12,12 +12,13 @@ Os nomes abaixo são um **contrato** com a correção — não os renomeie.
 docs/
   index.md                       # capa: grupo e status das entregas
   exercises/
-    data.md                      # um arquivo por exercício — sem pasta
-    perceptron.md
-    mlp.md
-    vae.md
-    code/                        # scripts dos exercícios, com o slug no nome
-    figures/                     # imagens dos exercícios, idem
+    data/
+      index.md                   # o relatório
+      code/                      # scripts, como arquivos executáveis
+      figures/                   # imagens commitadas
+    perceptron/
+    mlp/
+    vae/
   projects/
     index.md                     # visão geral: equipe, dataset, as 3 entregas
     eda/
@@ -31,14 +32,9 @@ mkdocs.yml
 requirements.txt
 ```
 
-**Exercício é arquivo, entrega de projeto é pasta.** O exercício é um trabalho individual e
-curto: cabe em um arquivo, e trocar o formato é trocar a extensão — `data.md` vira
-`data.ipynb` sem mexer em pasta nenhuma. O que ele produz vai para `exercises/code/` e
-`exercises/figures/`, compartilhados pelos quatro, com o slug no nome do arquivo:
-`data-exercise1.py`, `data-fig01.png`.
-
-O projeto é maior, tem equipe e atravessa o semestre — por isso cada entrega dele ganha a
-própria pasta, com `code/` e `figures/` só seus.
+**Cada entrega tem a própria pasta**, sempre com o mesmo formato: `index.md` para o
+relatório, `code/` para os scripts e `figures/` para as imagens. Se a entrega for um
+notebook, ele entra na mesma pasta — `data/index.ipynb` no lugar de `data/index.md`.
 
 O projeto é **um só**: as três entregas de `projects/` compartilham equipe e dataset, e a
 segunda é *classificação ou regressão*, nunca as duas.
@@ -47,13 +43,14 @@ segunda é *classificação ou regressão*, nunca as duas.
 
     Os slugs acima são os das edições recentes. Confira a lista da **sua** edição no
     [overview da disciplina](https://insper.github.io/ann-dl/){:target='_blank'} e ajuste
-    duas coisas em conjunto: os arquivos/pastas em `docs/` e a `nav` do `mkdocs.yml`.
+    duas coisas em conjunto: as pastas em `docs/` e a `nav` do `mkdocs.yml`. Cada nova
+    entrega é uma pasta com `index.md`, `code/` e `figures/` — copie uma existente.
 
 ## Front matter obrigatório
 
 Todo relatório começa com:
 
-``` { .yaml .copy title="docs/exercises/<slug>.md" }
+``` { .yaml .copy title="docs/exercises/<slug>/index.md" }
 ---
 exercise: data
 ai_use: "descreva o uso de IA, ou 'none'"

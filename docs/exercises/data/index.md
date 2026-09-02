@@ -25,12 +25,12 @@ parâmetros do enunciado foram usados e qual semente aleatória garante a reprod
 
 ### Código
 
-O script vive em [`code/data-exercise1.py`](https://github.com/usuario/ann-dl/blob/main/docs/exercises/code/data-exercise1.py)
+O script vive em [`code/exercise1_point_clouds.py`](https://github.com/usuario/ann-dl/blob/main/docs/exercises/data/code/exercise1_point_clouds.py)
 e é incluído aqui pelo próprio arquivo — nunca copie e cole o texto do código, use a
 inclusão para que relatório e repositório nunca fiquem fora de sincronia.
 
-``` { .python .copy .select linenums='1' title="docs/exercises/code/data-exercise1.py" }
---8<-- "docs/exercises/code/data-exercise1.py"
+``` { .python .copy .select linenums='1' title="docs/exercises/data/code/exercise1_point_clouds.py" }
+--8<-- "docs/exercises/data/code/exercise1_point_clouds.py"
 ```
 
 1.  Semente fixa: sem ela, os números da tabela de resultados mudam a cada execução e a
@@ -39,7 +39,7 @@ inclusão para que relatório e repositório nunca fiquem fora de sincronia.
 
 ### Figuras
 
-![Nuvens de pontos das quatro classes gaussianas](figures/exemplo.svg)
+![Nuvens de pontos das quatro classes gaussianas](figures/fig01-exemplo.svg)
 /// caption
 **Figura 1** — Dispersão das quatro classes no plano $(x_1, x_2)$ com `scale = 1.0`.
 ///
