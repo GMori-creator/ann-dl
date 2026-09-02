@@ -76,10 +76,12 @@ Configuração inicial, uma vez:
    desligado). Usando *Use this template* isso não é necessário.
 2. Troque no [mkdocs.yml](mkdocs.yml) todas as linhas marcadas com `# TROCAR`
    (`grep -n TROCAR mkdocs.yml`).
-3. **Settings → Actions → General → Workflow permissions** → **Read and write permissions**.
-   Sem isso o CI falha com `Permission denied to github-actions[bot]`.
+3. Nada a fazer quanto a permissões: o workflow já declara `permissions: contents: write`.
+   Só se o build falhar com `Permission denied to github-actions[bot]` vá em
+   **Settings → Actions → General → Workflow permissions** → **Read and write permissions**.
 4. Dê o primeiro push e espere o run terminar — é ele que cria a branch `gh-pages`.
 5. **Settings → Pages** → *Deploy from a branch* → branch **`gh-pages`**, pasta **`/ (root)`**.
+   Apontar o Pages para a `main` publica o Markdown cru, não o site.
 
 O passo a passo com as telas está em
 [Como usar este template → Publicação no GitHub Pages](docs/template/index.md).

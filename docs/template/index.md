@@ -208,26 +208,34 @@ público em contas gratuitas.
     Usando **Use this template** em vez de *Fork*, o Actions já vem ligado — e o histórico
     começa limpo, o que é preferível, já que o prazo é medido pelos seus commits.
 
-### Passo 2 — Dar permissão de escrita ao CI
+### Passo 2 — Garantir que o CI possa escrever
 
-O workflow precisa **escrever** na branch `gh-pages`, e por padrão o token do Actions só tem
-permissão de leitura. Em **Settings → Actions → General → Workflow permissions**, marque
-**Read and write permissions** e salve.
+O workflow precisa **escrever** na branch `gh-pages`, e o token do Actions não tem esse
+escopo por padrão. O workflow deste template já o pede explicitamente:
 
-![Tela de Workflow permissions, com a opção Read and write permissions marcada](gitactions-workflow-permission.png)
-/// caption
-**Settings → Actions → General → Workflow permissions**
-///
+``` { .yaml title=".github/workflows/main.yaml" }
+permissions:
+  contents: write
+```
 
-!!! failure "Sintoma de quem pulou este passo"
+Esse bloco sobrepõe o padrão do repositório, então **normalmente não há nada a fazer aqui**.
+Ele só não basta em dois casos: se você removeu o bloco, ou se uma política do repositório
+ou da organização impede que o workflow eleve o próprio escopo.
 
-    O build passa, mas o último passo falha com
-    `remote: Permission to <usuario>/<repo>.git denied to github-actions[bot]` ou
-    `error: failed to push some refs`. Volte aqui, marque a opção e re-execute o workflow
-    em **Actions → (o run que falhou) → Re-run all jobs**.
+!!! failure "Se o build falhar no último passo"
 
-O `permissions:` declarado no próprio workflow é o outro lado dessa configuração — ele pede
-ao GitHub o escopo de escrita no conteúdo do repositório:
+    O sintoma é `remote: Permission to <usuario>/<repo>.git denied to github-actions[bot]`
+    ou `error: failed to push some refs`. A correção é em
+    **Settings → Actions → General → Workflow permissions**: marque
+    **Read and write permissions**, salve, e re-execute o workflow em
+    **Actions → (o run que falhou) → Re-run all jobs**.
+
+    ![Tela de Workflow permissions, com a opção Read and write permissions marcada](gitactions-workflow-permission.png)
+    /// caption
+    **Settings → Actions → General → Workflow permissions**
+    ///
+
+O workflow completo:
 
 ``` { .yaml title=".github/workflows/main.yaml" }
 --8<-- ".github/workflows/main.yaml"
@@ -242,6 +250,11 @@ git push
 ```
 
 Acompanhe em **Actions**. O primeiro run cria a branch `gh-pages`; leva 1–2 minutos.
+
+!!! tip "Disparar sem commit"
+
+    O workflow também aceita disparo manual: **Actions → ci → Run workflow**. Útil para
+    republicar depois de mexer numa configuração do GitHub, sem precisar inventar um commit.
 
 !!! danger "O prazo é o seu último commit"
 
@@ -296,8 +309,8 @@ Ele não substitui o Passo 2: assim que você voltar a dar `push` na `main`, que
 
 | Sintoma | Causa provável |
 |---|---|
-| Nenhum run aparece em **Actions** | Workflows desabilitados no fork (Passo 1) |
-| Run falha com `Permission ... denied to github-actions[bot]` | Falta *Read and write permissions* (Passo 2) |
+| Nenhum run aparece em **Actions** depois de um push | Workflows desabilitados no fork (Passo 1) — o botão *Run workflow* pode funcionar mesmo assim |
+| Run falha com `Permission ... denied to github-actions[bot]` | O `permissions:` do workflow foi removido, ou a política do repositório bloqueia a elevação (Passo 2) |
 | **Settings → Pages** não oferece a branch `gh-pages` | O primeiro run ainda não terminou (Passo 3) |
 | Site abre em 404 | Fonte do Pages não configurada (Passo 4), ou repositório privado |
 | Site abre, mas CSS e links estão quebrados | `site_url` diferente da URL real do Pages |
