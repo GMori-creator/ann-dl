@@ -7,7 +7,7 @@ ai_use: "none"
 
 !!! abstract "Enunciado"
 
-    [Exercises · 2. Perceptron :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/exercises/perceptron/){:target='_blank'}
+    [Exercises → Perceptron](https://insper.github.io/ann-dl/){:target='_blank'}
 
 !!! tip "Como preencher"
 

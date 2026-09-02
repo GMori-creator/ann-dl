@@ -21,16 +21,23 @@ docs/
     vae/
   projects/
     index.md                     # visão geral: equipe, dataset, as 3 entregas
-    eda/                         # 17/09
-    classification/              # 05/11 — escolha classification OU regression
-    regression/                  #         e apague a pasta que sobrar
-    generative/                  # 20/11
+    eda/
+    classification/              # escolha classification OU regression
+    regression/                  # e apague a pasta que sobrar
+    generative/
 mkdocs.yml
 requirements.txt
 ```
 
-O projeto é **um só**: as três entregas de `projects/` compartilham equipe e dataset, e a de
-05/11 é *classificação ou regressão*, nunca as duas.
+O projeto é **um só**: as três entregas de `projects/` compartilham equipe e dataset, e a
+segunda é *classificação ou regressão*, nunca as duas.
+
+!!! info "O conjunto de entregas muda de edição para edição"
+
+    Os slugs acima são os das edições recentes. Confira a lista da **sua** edição no
+    [overview da disciplina](https://insper.github.io/ann-dl/){:target='_blank'} e ajuste
+    duas coisas em conjunto: as pastas em `docs/` e a `nav` do `mkdocs.yml`. Cada nova
+    entrega é uma pasta com `index.md`, `code/` e `figures/` — copie uma existente.
 
 ## Front matter obrigatório
 

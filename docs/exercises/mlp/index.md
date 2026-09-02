@@ -7,7 +7,7 @@ ai_use: "none"
 
 !!! abstract "Enunciado"
 
-    [Exercises · 3. MLP :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/exercises/mlp/){:target='_blank'}
+    [Exercises → MLP](https://insper.github.io/ann-dl/){:target='_blank'}
 
 !!! tip "Como preencher"
 

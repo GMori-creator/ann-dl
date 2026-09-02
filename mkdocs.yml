@@ -1,6 +1,6 @@
 # =============================================================================
-#  Template de entregas — Redes Neurais Artificiais & Deep Learning (2026.2)
-#  Enunciados: https://insper.github.io/ann-dl/2026.2/
+#  Template de entregas — Redes Neurais Artificiais & Deep Learning
+#  Serve a qualquer edição da disciplina: https://insper.github.io/ann-dl/
 #
 #  ANTES DE PUBLICAR: troque todas as linhas marcadas com "# TROCAR" abaixo.
 #  Passo a passo em docs/template/index.md > Publicação no GitHub Pages.
@@ -137,6 +137,8 @@ nav:
   - Home: index.md
   - Como usar este template: template/index.md
 
+  # A lista de entregas muda de edição para edição: acrescente ou remova itens
+  # aqui e as pastas correspondentes em docs/.
   - Exercícios:
     - 1. Data: exercises/data/index.md
     - 2. Perceptron: exercises/perceptron/index.md
@@ -159,4 +161,4 @@ nav:
     # TROCAR "usuario/ann-dl" pelo seu repositório, senão o link abre o notebook de outra pessoa:
     - Abrir no Colab ↗: https://colab.research.google.com/github/usuario/ann-dl/blob/main/docs/examples/notebook/data-exercise-1.ipynb
 
-  - Enunciados da disciplina ↗: https://insper.github.io/ann-dl/2026.2/
+  - Enunciados da disciplina ↗: https://insper.github.io/ann-dl/

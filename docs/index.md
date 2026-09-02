@@ -2,9 +2,9 @@
 
 ???+ info inline end "Edição"
 
-    **2026.2**
+    **20XX.X** <!-- TROCAR -->
 
-    [Enunciados :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/){:target='_blank'}
+    [Enunciados :material-open-in-new:](https://insper.github.io/ann-dl/){:target='_blank'}
 
 Este site é o **portfólio** das entregas da disciplina. Ele cresce ao longo do semestre:
 cada exercício e cada projeto vira um item de menu, e o repositório que o gera é parte
@@ -29,31 +29,29 @@ histórico do Git).
 
 ## Status das entregas
 
-A nota individual e a de equipe são **independentes** — as duas precisam chegar a 5,0.
+!!! info "Datas, pesos e regras são da sua edição"
 
-### Exercícios — individual, 40% da nota individual
+    O [overview da edição](https://insper.github.io/ann-dl/){:target='_blank'} traz o
+    calendário, os pesos de cada entrega e as regras de avaliação. Este template não os
+    repete — copie para cá o que a sua turma precisa acompanhar, ou mantenha só o status.
 
-| # | Entrega | Data | Peso | Status |
-|---|---------|------|------|--------|
-| 1 | [Data](exercises/data/index.md) | 01/09 | 25% | :material-checkbox-blank-outline: |
-| 2 | [Perceptron](exercises/perceptron/index.md) | 10/09 | 25% | :material-checkbox-blank-outline: |
-| 3 | [MLP](exercises/mlp/index.md) | 22/09 | 25% | :material-checkbox-blank-outline: |
-| 4 | [VAE](exercises/vae/index.md) | 20/10 | 25% | :material-checkbox-blank-outline: |
+    A lista abaixo é o conjunto usual de entregas; acrescente ou remova itens conforme a
+    sua edição, ajustando também as pastas em `docs/` e a `nav` do `mkdocs.yml`.
 
-Os outros 60% da nota individual vêm da prova final (24/11).
+### Exercícios — individuais
 
-### [Projeto](projects/index.md) — equipe
+- [ ] [Data](exercises/data/index.md)
+- [ ] [Perceptron](exercises/perceptron/index.md)
+- [ ] [MLP](exercises/mlp/index.md)
+- [ ] [VAE](exercises/vae/index.md)
+
+### [Projeto](projects/index.md) — em equipe
 
 Um projeto, um dataset, três entregas:
 
-| # | Entrega | Data | Peso | Status |
-|---|---------|------|------|--------|
-| 1 | [EDA](projects/eda/index.md) | 17/09 | 20% | :material-checkbox-blank-outline: |
-| 2 | [Classificação](projects/classification/index.md) **ou** [Regressão](projects/regression/index.md) | 05/11 | 60% | :material-checkbox-blank-outline: |
-| 3 | [Generativo](projects/generative/index.md) | 20/11 | 20% | :material-checkbox-blank-outline: |
-
-A prova de projeto (19/11) **limita** a nota de equipe em vez de somar a ela:
-$\text{Equipe} = \min(\text{Projeto},\ \text{Prova de Projeto})$.
+- [ ] [EDA](projects/eda/index.md)
+- [ ] [Classificação](projects/classification/index.md) **ou** [Regressão](projects/regression/index.md)
+- [ ] [Generativo](projects/generative/index.md)
 
 ## Checklist antes de cada entrega
 
@@ -66,11 +64,12 @@ $\text{Equipe} = \min(\text{Projeto},\ \text{Prova de Projeto})$.
 - [ ] Tabela **Results summary** completa, sem linhas em branco.
 - [ ] Último commit anterior ao prazo.
 
-!!! danger "Defesa oral"
+!!! danger "Escreva para defender"
 
-    **Todas** as notas da disciplina estão sujeitas a defesa oral. Resultado negativo na
-    defesa **zera** aquela nota. Escreva relatórios que você consiga sustentar oralmente —
-    o que inclui entender cada linha do código que está no repositório.
+    As notas da disciplina costumam estar sujeitas a defesa oral, e a nota do projeto, a uma
+    prova sobre o próprio projeto. Escreva relatórios que você consiga sustentar meses
+    depois — o que inclui entender cada linha do código que está no repositório. Confira as
+    regras da sua edição no overview.
 
 !!! danger "Uso de IA"
 

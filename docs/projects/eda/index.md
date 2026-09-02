@@ -7,19 +7,17 @@ ai_use: "none"
 
 !!! abstract "Entrega 1 de 3 do [Projeto](../index.md)"
 
-    **Data:** 17/09 · **Peso:** 20% da nota de equipe
-
-    [Enunciados da disciplina :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/){:target='_blank'}
+    [Projects](https://insper.github.io/ann-dl/){:target='_blank'}
 
 !!! tip "O que esta entrega decide"
 
     O EDA não é um álbum de gráficos: é onde a equipe **escolhe o dataset** e descobre o que
     vai atrapalhar o treino depois — desbalanceamento, vazamento, escalas incompatíveis com a
     ativação, ausências não aleatórias. Cada achado aqui deve virar uma linha do plano de
-    pré-processamento no fim da página, e é esse plano que as entregas de 05/11 e 20/11
-    executam.
+    pré-processamento no fim da página, e é esse plano que as duas entregas
+    seguintes executam.
 
-    As aulas de [Data](https://insper.github.io/ann-dl/2026.2/classes/data/){:target='_blank'}
+    As aulas de [Data](https://insper.github.io/ann-dl/){:target='_blank'}
     dão a estrutura: tipos, distribuições, qualidade, desbalanceamento, vazamento, split e
     pré-processamento.
 

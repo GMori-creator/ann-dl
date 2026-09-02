@@ -7,9 +7,7 @@ ai_use: "none"
 
 !!! abstract "Entrega 2 de 3 do [Projeto](../index.md)"
 
-    **Data:** 05/11 · **Peso:** 60% da nota de equipe
-
-    [Projects · Classificação :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/projects/classification/){:target='_blank'}
+    [Projects → Classification](https://insper.github.io/ann-dl/){:target='_blank'}
 
 !!! warning "Esta entrega é uma escolha"
 

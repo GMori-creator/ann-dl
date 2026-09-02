@@ -1,7 +1,8 @@
 # Template de entregas — Redes Neurais Artificiais & Deep Learning
 
-Template de site (MkDocs Material + GitHub Pages) para as entregas da disciplina,
-edição **2026.2** — [enunciados](https://insper.github.io/ann-dl/2026.2/).
+Template de site (MkDocs Material + GitHub Pages) para as entregas da disciplina —
+[enunciados](https://insper.github.io/ann-dl/). Serve a **qualquer edição**: datas, pesos e a
+lista de entregas ficam no site da disciplina, não aqui.
 
 Cada entrega é um item de menu, e o alvo do item pode ser um relatório em Markdown, um
 notebook `.ipynb` ou um link do Google Colab. Os três casos estão demonstrados na seção
@@ -30,14 +31,14 @@ docs/
 Os slugs de `exercises/` e `projects/` são fixos e casam com o site da disciplina. Não os
 renomeie.
 
-## As entregas de 2026.2
+## As entregas
 
-**Exercícios** (individuais, 25% cada dentro dos 40% de exercícios da nota individual):
-Data (01/09), Perceptron (10/09), MLP (22/09), VAE (20/10).
+O conjunto abaixo é o das edições recentes; confira o overview da **sua** edição e ajuste as
+pastas em `docs/` junto com a `nav` do `mkdocs.yml`.
 
-**Projeto** (equipe, um único dataset em três entregas): EDA (17/09, 20%),
-Classificação **ou** Regressão (05/11, 60%), Generativo (20/11, 20%). A prova de projeto
-(19/11) limita a nota de equipe — `Equipe = min(Projeto, Prova)`.
+- **Exercícios**, individuais: Data, Perceptron, MLP, VAE.
+- **Projeto**, em equipe: um único dataset em três entregas — EDA, Classificação **ou**
+  Regressão, e Generativo.
 
 O template traz as pastas de classificação e regressão; apague a que a equipe não escolher,
 da pasta e da `nav`.

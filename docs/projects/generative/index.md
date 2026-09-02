@@ -7,9 +7,7 @@ ai_use: "none"
 
 !!! abstract "Entrega 3 de 3 do [Projeto](../index.md)"
 
-    **Data:** 20/11 · **Peso:** 20% da nota de equipe
-
-    [Projects · Generative :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/projects/generative/){:target='_blank'}
+    [Projects → Generative](https://insper.github.io/ann-dl/){:target='_blank'}
 
 !!! tip "A mudança de pergunta"
 
@@ -110,8 +108,8 @@ contra a original, estatísticas por classe, e uma inspeção qualitativa honest
 
 ### O modelo serviu ao propósito?
 
-Se o objetivo da seção 1 era aumentar dados, treine novamente o modelo da entrega de 05/11
-com os dados sintéticos e compare as métricas. Essa comparação é o teste real.
+Se o objetivo da seção 1 era aumentar dados, treine novamente o modelo da entrega
+anterior com os dados sintéticos e compare as métricas. Essa comparação é o teste real.
 
 | Cenário | Métrica principal |
 |---------|-------------------|

@@ -2,31 +2,29 @@
 
 !!! abstract "Enunciados"
 
-    [Projects :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/){:target='_blank'}
+    [Projects](https://insper.github.io/ann-dl/){:target='_blank'}
 
 O projeto é **um só**, feito em equipe sobre **o mesmo dataset**, e entregue em três partes
-ao longo do semestre. Cada parte fecha em uma data e tem peso próprio dentro da nota de
-equipe:
+ao longo do semestre, cada uma com data e peso próprios:
 
-| # | Entrega | Data | Peso | Página |
-|---|---------|------|------|--------|
-| 1 | EDA | 17/09 | 20% | [EDA](eda/index.md) |
-| 2 | Classificação **ou** Regressão | 05/11 | 60% | [Classificação](classification/index.md) · [Regressão](regression/index.md) |
-| 3 | Generativo | 20/11 | 20% | [Generativo](generative/index.md) |
+| # | Entrega | Página |
+|---|---------|--------|
+| 1 | EDA | [EDA](eda/index.md) |
+| 2 | Classificação **ou** Regressão | [Classificação](classification/index.md) · [Regressão](regression/index.md) |
+| 3 | Generativo | [Generativo](generative/index.md) |
 
-!!! danger "A prova de projeto limita a nota, não soma"
+Datas e pesos são da sua edição — veja o
+[overview](https://insper.github.io/ann-dl/){:target='_blank'}.
 
-    A nota de equipe é $\min(\text{Projeto},\ \text{Prova de Projeto})$ — a prova (19/11) é
-    feita **sobre o projeto da própria equipe**. Deliverables bem escritos não sustentam uma
-    equipe que não consegue explicar o que entregou. Escreva os relatórios de modo que você
-    consiga defendê-los meses depois.
+!!! danger "A nota do projeto costuma ser limitada por uma prova sobre o próprio projeto"
 
-    Vale também a regra geral da disciplina: toda nota está sujeita a defesa oral, e um
-    resultado negativo na defesa **zera** aquela nota.
+    Deliverables bem escritos não sustentam uma equipe que não consegue explicar o que
+    entregou. Escreva os relatórios de modo que você consiga defendê-los meses depois, e
+    confira no overview da sua edição como a prova entra na nota.
 
 !!! warning "Escolha uma: classificação ou regressão"
 
-    A entrega de 05/11 é **uma das duas**, não as duas. Este template traz as duas pastas
+    A segunda entrega é **uma das duas**, não as duas. Este template traz as duas pastas
     para você escolher; depois de decidir, apague a que não vai usar — da pasta `docs/projects/`
     **e** da `nav` no `mkdocs.yml`.
 
@@ -53,17 +51,16 @@ duas viáveis.
 | **Amostras** | |
 | **Features** | |
 | **Variável alvo** | |
-| **Tarefa escolhida (05/11)** | Classificação ou Regressão |
+| **Tarefa escolhida** | Classificação ou Regressão |
 
 Justifique em 3–5 linhas: por que este dataset, e o que nele torna a tarefa escolhida
 interessante em vez de trivial.
 
 ## Status
 
-- [ ] **1. EDA** — 17/09
-- [ ] **2. Classificação ou Regressão** — 05/11
-- [ ] **3. Generativo** — 20/11
-- [ ] Prova de projeto — 19/11
+- [ ] **1. EDA**
+- [ ] **2. Classificação ou Regressão**
+- [ ] **3. Generativo**
 
 ## Registro de decisões
 

@@ -7,7 +7,7 @@ ai_use: "Claude foi usado para revisar a redação das análises e depurar o cá
 
 !!! abstract "Enunciado"
 
-    [Exercises · Data :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/exercises/data/){:target='_blank'}
+    [Exercises → Data](https://insper.github.io/ann-dl/){:target='_blank'}
 
 !!! tip "Este arquivo é o modelo de relatório"
 

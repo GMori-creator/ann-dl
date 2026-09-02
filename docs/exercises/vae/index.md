@@ -7,7 +7,7 @@ ai_use: "none"
 
 !!! abstract "Enunciado"
 
-    [Exercises · 4. VAE :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/exercises/vae/){:target='_blank'}
+    [Exercises → VAE](https://insper.github.io/ann-dl/){:target='_blank'}
 
 !!! tip "Como preencher"
 
