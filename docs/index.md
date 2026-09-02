@@ -1,100 +1,60 @@
-# Template de Entrega
-
+# Entregas — Redes Neurais Artificiais & Deep Learning
 
 ???+ info inline end "Edição"
 
-    2025.1
+    **2026.2**
 
+    [Enunciados :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/){:target='_blank'}
 
-## Grupo/Kit X
+Este site é o **portfólio** das entregas da disciplina. Ele cresce ao longo do semestre:
+cada exercício e cada projeto vira um item de menu, e o repositório que o gera é parte
+da avaliação — o professor lê o site publicado **e** o repositório (Markdown, código e
+histórico do Git).
 
-1. João da Silva
-1. Pedro de Souza
-1. Maria Oliveira
-1. Grupo K
-    - João da Silva
-    - Pedro de Souza
+## Aluno / Grupo
 
+| Nome | E-mail | GitHub |
+|------|--------|--------|
+| João da Silva | joaods@al.insper.edu.br | [@joaods](https://github.com/joaods) |
+| Maria Oliveira | mariao@al.insper.edu.br | [@mariao](https://github.com/mariao) |
 
+!!! tip "Como usar este template"
 
-!!! tip "Instruções"
+    Este é um **bloco de notas versionado**: registre o que foi feito, o que falta e as
+    decisões tomadas, commitando a cada avanço. O prazo de uma entrega é o *timestamp do
+    último commit que toca a pasta daquela entrega* — não a hora do formulário nem a da
+    publicação no Pages.
 
-    Vocês devem utilizar este template como um bloco de notas para registrar o que foi feito e o que falta fazer. Vocês devem adicionar as informações necessárias.
-    O template deve ser editado e atualizado a cada entrega, registrando assim a data de entrega e o que foi feito até o momento via Git.
+    Comece por [Como usar este template](template/index.md).
 
-## Entregas
+## Status das entregas
 
-- [x] Roteiro 1 - Data 23/02/2025
-- [ ] Roteiro 2
-- [ ] Roteiro 3
-- [ ] Roteiro 4
-- [ ] Projeto
+### Exercícios
 
-## Diagramas
+- [ ] [1. Data](exercises/data/index.md)
+- [ ] [2. Perceptron](exercises/perceptron/index.md)
+- [ ] [3. MLP](exercises/mlp/index.md)
+- [ ] [4. VAE](exercises/vae/index.md)
 
-Use o [Mermaid](https://mermaid.js.org/intro/){:target='_blank'} para criar os diagramas de documentação.
+### Projetos
 
-[Mermaid Live Editor](https://mermaid.live/){:target='_blank'}
+- [ ] [Classificação](projects/classification/index.md)
+- [ ] [Regressão](projects/regression/index.md)
+- [ ] [Generativo](projects/generative/index.md)
 
+## Checklist antes de cada entrega
 
-``` mermaid
-flowchart TD
-    Deployment:::orange -->|defines| ReplicaSet
-    ReplicaSet -->|manages| pod((Pod))
-    pod:::red -->|runs| Container
-    Deployment -->|scales| pod
-    Deployment -->|updates| pod
+- [ ] Repositório **público** e o GitHub Pages construindo sem erro.
+- [ ] Caminho correto: `docs/exercises/<slug>/index.md` (ou `docs/projects/<slug>/index.md`).
+- [ ] *Front matter* com `exercise:` (ou `project:`) e `ai_use:` preenchidos.
+- [ ] Títulos espelhando a estrutura do enunciado (`## Exercise N`, `### A`, `### B`, ...).
+- [ ] Figuras commitadas em `figures/`, numeradas e exibidas no relatório.
+- [ ] Scripts como arquivos reais em `code/`, referenciados via `--8<--`.
+- [ ] Tabela **Results summary** completa, sem linhas em branco.
+- [ ] Último commit anterior ao prazo.
 
-    Service:::orange -->|exposes| pod
+!!! danger "Uso de IA"
 
-    subgraph  
-        ConfigMap:::orange
-        Secret:::orange
-    end
-
-    ConfigMap --> Deployment
-    Secret --> Deployment
-    classDef red fill:#f55
-    classDef orange fill:#ffa500
-```
-
-
-
-## Códigos
-
-=== "De um arquivo remoto"
-
-    ``` { .yaml .copy .select linenums='1' title="main.yaml" }
-    --8<-- "https://raw.githubusercontent.com/hsandmann/documentation.template/refs/heads/main/.github/workflows/main.yaml"
-    ```
-
-=== "Anotações no código"
-
-    ``` { .yaml title="compose.yaml" }
-    name: app
-
-        db:
-            image: postgres:17
-            environment:
-                POSTGRES_DB: ${POSTGRES_DB:-projeto} # (1)!
-                POSTGRES_USER: ${POSTGRES_USER:-projeto}
-                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-projeto}
-            ports:
-                - 5432:5432 #(2)!
-    ```
-
-    1.  Caso a variável de ambiente `POSTGRES_DB` não exista ou seja nula - não seja definida no arquivo `.env` - o valor padrão será `projeto`. Vide [documentação](https://docs.docker.com/reference/compose-file/interpolation/){target='_blank'}.
-
-    2. Aqui é feito um túnel da porta 5432 do container do banco de dados para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.
-
-
-## Exemplo de vídeo
-
-Lorem ipsum dolor sit amet
-
-<iframe width="100%" height="470" src="https://www.youtube.com/embed/3574AYQml8w" allowfullscreen></iframe>
-
-
-## Referências
-
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/){:target='_blank'}
+    O campo `ai_use` é **obrigatório** em toda entrega. Colaborar com IA é permitido;
+    não declarar o uso, não. Descreva o que foi gerado, revisado ou depurado com apoio de
+    IA — ou escreva `"none"`.

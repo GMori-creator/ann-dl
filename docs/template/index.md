@@ -1,3 +1,66 @@
+# Como usar este template
+
+Este repositório gera o site de entregas da disciplina. O fluxo é sempre o mesmo: você
+edita um Markdown (ou commita um notebook) dentro de `docs/`, dá `git push` na `main`, e o
+GitHub Actions publica o site.
+
+## Estrutura de pastas
+
+Os nomes abaixo são um **contrato** com a correção — não os renomeie.
+
+``` { .text title="estrutura obrigatória" }
+docs/
+  index.md                       # capa: grupo e status das entregas
+  exercises/
+    data/
+      index.md                   # o relatório
+      code/                      # scripts, como arquivos executáveis
+      figures/                   # imagens commitadas
+    perceptron/
+    mlp/
+    vae/
+  projects/
+    classification/
+    regression/
+    generative/
+mkdocs.yml
+requirements.txt
+```
+
+## Front matter obrigatório
+
+Todo relatório começa com:
+
+``` { .yaml .copy title="docs/exercises/<slug>/index.md" }
+---
+exercise: data
+ai_use: "descreva o uso de IA, ou 'none'"
+---
+```
+
+Nos projetos, troque `exercise:` por `project:`. Os dois campos são obrigatórios.
+
+## Colocando uma entrega no menu
+
+Um item de menu por entrega, em `mkdocs.yml`. O alvo pode ser Markdown, notebook `.ipynb`
+ou um link do Colab — os três exemplos estão em
+[Exemplos de uso](../examples/index.md).
+
+## Antes de publicar
+
+Ajuste no `mkdocs.yml` as linhas que apontam para o repositório de origem:
+
+``` { .yaml .copy title="mkdocs.yml" }
+site_name: ANN-DL · Entregas
+site_author: Seu Nome, Sobrenome
+site_url: https://usuario.github.io/ann-dl
+repo_url: https://github.com/usuario/ann-dl
+repo_name: usuario/ann-dl
+```
+
+E também a URL do Colab na seção `nav`, se for usar o exemplo.
+
+---
 
 ## Pré-requisitos
 

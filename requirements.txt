@@ -1,18 +1,15 @@
-markdown-grid-tables
-markdown-exec[ansi]
-mkdocs-badges
+# --- site (mkdocs) --------------------------------------------------------
 mkdocs-material
 mkdocs-material-extensions
 mkdocs-minify-plugin
 mkdocs-glightbox
 mkdocs-git-authors-plugin
-mkdocs-git-committers-plugin-2
 mkdocs-git-revision-date-localized-plugin
-mkdocs-render-swagger-plugin
 mkdocs-jupyter
-termynal
-matplotlib
+
+# --- notebooks e scripts das entregas -------------------------------------
+ipykernel
 numpy
 pandas
-yfinance
-
+matplotlib
+scikit-learn
