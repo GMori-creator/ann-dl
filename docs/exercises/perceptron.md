@@ -13,7 +13,7 @@ ai_use: "none"
 
     Espelhe a estrutura do enunciado (`## Exercise N` → `### A`, `### B`, ...), coloque os
     scripts em `code/` e as imagens em `figures/`. O exercício
-    [1. Data](../data/index.md) traz o modelo completo, com inclusão de código via `--8<--`,
+    [1. Data](data.md) traz o modelo completo, com inclusão de código via `--8<--`,
     figura legendada e tabela de resultados.
 
 ## Exercise 1

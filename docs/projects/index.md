@@ -5,7 +5,26 @@
     [Projects](https://insper.github.io/ann-dl/){:target='_blank'}
 
 O projeto é **um só**, feito em equipe sobre **o mesmo dataset**, e entregue em três partes
-ao longo do semestre, cada uma com data e peso próprios:
+ao longo do semestre, cada uma com data e peso próprios.
+
+## Equipe
+
+!!! danger "Preencha antes de qualquer entrega"
+
+    Toda entrega do projeto é avaliada em equipe. Se os nomes não estiverem aqui, não há
+    como atribuir a nota — e o mesmo vale para o `mkdocs.yml`, cujo `site_author` deve
+    listar o grupo.
+
+| Nome completo | E-mail | GitHub |
+|---------------|--------|--------|
+| | | |
+| | | |
+| | | |
+
+Times de 2 a 3 pessoas. Repita esses nomes no cabeçalho de cada entrega — quem corrige pode
+abrir uma página sozinha, sem passar por aqui.
+
+## As três entregas
 
 | # | Entrega | Página |
 |---|---------|--------|
@@ -27,16 +46,6 @@ Datas e pesos são da sua edição — veja o
     A segunda entrega é **uma das duas**, não as duas. Este template traz as duas pastas
     para você escolher; depois de decidir, apague a que não vai usar — da pasta `docs/projects/`
     **e** da `nav` no `mkdocs.yml`.
-
-## Equipe
-
-Times de 2 a 3 pessoas.
-
-| Nome | E-mail | GitHub |
-|------|--------|--------|
-| | | |
-| | | |
-| | | |
 
 ## Dataset
 

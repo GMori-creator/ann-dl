@@ -9,6 +9,16 @@ ai_use: "none"
 
     [Projects](https://insper.github.io/ann-dl/){:target='_blank'}
 
+!!! info "Equipe"
+
+    | Nome completo | GitHub |
+    |---------------|--------|
+    | | |
+    | | |
+    | | |
+
+    Dataset, decisões e status: [página do projeto](../index.md).
+
 !!! tip "O que esta entrega decide"
 
     O EDA não é um álbum de gráficos: é onde a equipe **escolhe o dataset** e descobre o que

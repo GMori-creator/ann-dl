@@ -7,8 +7,8 @@ mesmo jeito na navegação.
 ``` { .yaml .copy title="mkdocs.yml" }
 nav:
   - Exercícios:
-    - 1. Data: exercises/data/index.md                       # (1)!
-    - 2. Perceptron: exercises/perceptron/index.ipynb        # (2)!
+    - 1. Data: exercises/data.md                             # (1)!
+    - 2. Perceptron: exercises/perceptron.ipynb              # (2)!
     - 3. MLP: https://colab.research.google.com/drive/1AbC   # (3)!
 ```
 
@@ -17,24 +17,28 @@ nav:
     estiverem salvas no arquivo.
 3.  **Link externo** — qualquer URL absoluta vira um item que abre fora do site.
 
-!!! danger "O caminho dos exercícios é fixo"
+!!! info "Um arquivo por exercício"
 
-    As *submission guidelines* exigem `docs/exercises/<slug>/index.md`, com os slugs
-    `data`, `perceptron`, `mlp` e `vae`. Se você optar por notebook ou Colab, **mantenha
-    também o `index.md`** apontando para ele — senão a correção automática não encontra a
-    entrega.
+    Cada exercício é **um arquivo** direto em `docs/exercises/` — `data.md`, `perceptron.md`,
+    e assim por diante. Trocar o formato é trocar a extensão: `data.md` → `data.ipynb`, sem
+    mexer em pasta nenhuma. Scripts e imagens ficam em `docs/exercises/code/` e
+    `docs/exercises/figures/`, compartilhados pelos quatro, com o slug do exercício no nome
+    do arquivo (`data-exercise1.py`, `data-fig01.png`).
+
+    Pastas por entrega existem só no [projeto](../projects/index.md), que é maior e tem
+    material próprio.
 
 ## 1. Relatório em Markdown
 
-O caminho principal. Veja [1. Data](../exercises/data/index.md) preenchido como modelo:
+O caminho principal. Veja [1. Data](../exercises/data.md) preenchido como modelo:
 *front matter*, títulos espelhando o enunciado, figura legendada, código incluído a partir
 de `code/` e tabela *Results summary*.
 
 Para trazer um script para dentro do relatório sem copiar e colar:
 
-```` { .markdown .copy title="docs/exercises/data/index.md" }
-``` { .python .copy linenums='1' title="exercise1.py" }
-;--8<-- "docs/exercises/data/code/exercise1_point_clouds.py"
+```` { .markdown .copy title="docs/exercises/data.md" }
+``` { .python .copy linenums='1' title="data-exercise1.py" }
+;--8<-- "docs/exercises/code/data-exercise1.py"
 ```
 ````
 
@@ -109,13 +113,13 @@ Para colocar o badge dentro de uma página, em vez de no menu:
 === "Figuras"
 
     ``` { .markdown .copy }
-    ![Texto alternativo](figures/fig01-exemplo.svg)
+    ![Texto alternativo](figures/data-fig01.png)
     /// caption
     **Figura 1** — legenda descrevendo o que a figura mostra.
     ///
     ```
 
-    ![Exemplo de figura](../exercises/data/figures/fig01-exemplo.svg)
+    ![Exemplo de figura](../exercises/figures/exemplo.svg)
     /// caption
     **Figura 1** — clique na imagem para ampliar (`glightbox`).
     ///

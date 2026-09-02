@@ -9,6 +9,16 @@ ai_use: "none"
 
     [Projects → Generative](https://insper.github.io/ann-dl/){:target='_blank'}
 
+!!! info "Equipe"
+
+    | Nome completo | GitHub |
+    |---------------|--------|
+    | | |
+    | | |
+    | | |
+
+    Dataset, decisões e status: [página do projeto](../index.md).
+
 !!! tip "A mudança de pergunta"
 
     As entregas anteriores perguntavam $p(y \mid \mathbf{x})$ — dado um exemplo, qual o
@@ -16,7 +26,7 @@ ai_use: "none"
     amostras novas que poderiam ter vindo do mesmo lugar. Isso muda tudo, inclusive a
     avaliação: não existe "acurácia" de uma amostra gerada.
 
-Equipe e dataset ficam na [página do projeto](../index.md). Reaproveite o
+O dataset e as decisões da equipe ficam na [página do projeto](../index.md). Reaproveite o
 [EDA](../eda/index.md) — o que você descobriu sobre distribuições e desbalanceamento é
 exatamente o que o modelo generativo precisa reproduzir.
 

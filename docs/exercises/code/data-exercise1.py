@@ -1,11 +1,11 @@
 """Exercise 1 — Exploring class separability in 2D.
 
-Gera as 4 classes gaussianas do enunciado, salva a figura em ``figures/`` e
-imprime as métricas que alimentam a tabela *Results summary* do relatório.
+Gera as 4 classes gaussianas do enunciado, salva a figura em ``docs/exercises/figures/``
+e imprime as métricas que alimentam a tabela *Results summary* do relatório.
 
 Uso (a partir da raiz do repositório):
 
-    python docs/exercises/data/code/exercise1_point_clouds.py
+    python docs/exercises/code/data-exercise1.py
 """
 
 from pathlib import Path
@@ -13,7 +13,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-FIGURES = Path(__file__).resolve().parents[1] / "figures"
+FIGURES = Path(__file__).resolve().parent.parent / "figures"
 RNG = np.random.default_rng(42)  # (1)!
 
 CLASSES = {
@@ -61,7 +61,7 @@ def main() -> None:
     ax.set_title("Nuvens de pontos gaussianas (scale = 1.0)")
     ax.legend(loc="upper left")
     fig.tight_layout()
-    fig.savefig(FIGURES / "fig01-point-clouds.png", dpi=150)
+    fig.savefig(FIGURES / "data-fig01-point-clouds.png", dpi=150)
     plt.close(fig)  # (2)!
 
     for scale in (0.5, 1.0, 2.0):

@@ -51,7 +51,14 @@ alteração pronta. Ele já roda limpo, com zero warnings; mantenha assim.
 Os slugs em `docs/exercises/` (`data`, `perceptron`, `mlp`, `vae`) e em `docs/projects/`
 (`classification`, `regression`, `generative`) são fixados pelas *submission guidelines* da
 disciplina, assim como o caminho `docs/<seção>/<slug>/index.md` e as subpastas `code/` e
-`figures/`. **Renomear qualquer um deles quebra a correção**, não só o site. A exceção é
+`figures/`. **Renomear qualquer um deles quebra a correção**, não só o site.
+
+Mas a forma difere entre os dois: **exercício é um arquivo** (`docs/exercises/data.md`), com
+`code/` e `figures/` compartilhados por todos os exercícios e nomes prefixados pelo slug
+(`data-exercise1.py`); **entrega de projeto é uma pasta**
+(`docs/projects/eda/{index.md,code/,figures/}`). Não uniformize os dois: a assimetria é
+deliberada — o exercício troca de formato só mudando a extensão (`data.md` → `data.ipynb`),
+e o projeto tem material próprio o bastante para justificar as subpastas. A exceção é
 `projects/eda/`: o overview cobra a entrega de EDA, mas a disciplina não publicou página com
 esse slug — se ela aparecer com outro nome, alinhe.
 
@@ -69,8 +76,10 @@ apagar a que sobrar.
 funciona como *section index* — daí o `navigation.indexes` nas features do tema.
 
 `docs/projects/index.md` é onde a equipe registra dataset e decisões uma única vez; as três
-entregas referenciam essa página em vez de repetir a informação. Ao editar as entregas do
-projeto, mantenha essa divisão.
+entregas referenciam essa página em vez de repetir a informação. A exceção deliberada são os
+**nomes do grupo**, que aparecem tanto ali quanto no cabeçalho de cada entrega — quem corrige
+pode abrir uma página sozinha, e um relatório de equipe sem os nomes não é atribuível. Ao
+editar as entregas do projeto, mantenha essa divisão.
 
 ### Uma entrega, um item de menu
 
@@ -80,7 +89,7 @@ demonstra os três e é a página a atualizar quando esse mecanismo mudar.
 
 ### Código não é copiado, é incluído
 
-`docs/exercises/data/index.md` é o modelo preenchido: puxa o script real de `code/` via
+`docs/exercises/data.md` é o modelo preenchido: puxa o script real de `exercises/code/` via
 `--8<--` do `pymdownx.snippets`, configurado com `base_path: [.]` (raiz do repositório) e
 `check_paths: true` — por isso um caminho errado derruba o build. Ao escrever `--8<--` como
 exemplo dentro de uma página, escape com `;--8<--`, senão o preprocessador o executa mesmo

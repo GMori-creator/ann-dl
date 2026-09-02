@@ -9,13 +9,23 @@ ai_use: "none"
 
     [Projects → Classification](https://insper.github.io/ann-dl/){:target='_blank'}
 
+!!! info "Equipe"
+
+    | Nome completo | GitHub |
+    |---------------|--------|
+    | | |
+    | | |
+    | | |
+
+    Dataset, decisões e status: [página do projeto](../index.md).
+
 !!! warning "Esta entrega é uma escolha"
 
     A equipe entrega **classificação ou regressão**, não as duas. Se a escolha foi a outra,
     apague esta pasta e a linha correspondente na `nav` do `mkdocs.yml`.
 
-Equipe e dataset ficam registrados na [página do projeto](../index.md). Aqui entra o que é
-específico desta tarefa. O EDA já respondeu o que há no dataset — **não repita o EDA**,
+O dataset e as decisões da equipe ficam na [página do projeto](../index.md). Aqui entra o
+que é específico desta tarefa. O EDA já respondeu o que há no dataset — **não repita o EDA**,
 referencie-o: [1. EDA](../eda/index.md).
 
 ## 1. Escolha do dataset
