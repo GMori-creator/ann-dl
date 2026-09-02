@@ -44,11 +44,31 @@ mkdocs serve -o
 
 ## Publicação
 
-O workflow em [.github/workflows/main.yaml](.github/workflows/main.yaml) publica o site a
-cada push na `main`. Antes do primeiro push, ajuste `site_url`, `repo_url` e `repo_name` no
-[mkdocs.yml](mkdocs.yml) para o seu repositório.
+O workflow em [.github/workflows/main.yaml](.github/workflows/main.yaml) roda
+`mkdocs gh-deploy --force` a cada push na `main`: ele constrói o HTML, empurra para a branch
+`gh-pages`, e é essa branch que o GitHub Pages serve.
 
-Para publicar manualmente:
+Configuração inicial, uma vez:
+
+1. **Se você forkou**, habilite os workflows na aba **Actions** (forks vêm com o Actions
+   desligado). Usando *Use this template* isso não é necessário.
+2. Troque no [mkdocs.yml](mkdocs.yml) todas as linhas marcadas com `# TROCAR`
+   (`grep -n TROCAR mkdocs.yml`).
+3. **Settings → Actions → General → Workflow permissions** → **Read and write permissions**.
+   Sem isso o CI falha com `Permission denied to github-actions[bot]`.
+4. Dê o primeiro push e espere o run terminar — é ele que cria a branch `gh-pages`.
+5. **Settings → Pages** → *Deploy from a branch* → branch **`gh-pages`**, pasta **`/ (root)`**.
+
+O passo a passo com as telas está em
+[Como usar este template → Publicação no GitHub Pages](docs/template/index.md).
+
+Antes de dar push, valide localmente — o CI publica mesmo com avisos, o modo estrito não:
+
+```shell
+mkdocs build --strict
+```
+
+Para publicar manualmente, sem passar pelo CI:
 
 ```shell
 mkdocs gh-deploy

@@ -48,17 +48,23 @@ ou um link do Colab — os três exemplos estão em
 
 ## Antes de publicar
 
-Ajuste no `mkdocs.yml` as linhas que apontam para o repositório de origem:
+Todas as linhas do `mkdocs.yml` que você precisa trocar estão marcadas com `# TROCAR`:
 
-``` { .yaml .copy title="mkdocs.yml" }
-site_name: ANN-DL · Entregas
-site_author: Seu Nome, Sobrenome
-site_url: https://usuario.github.io/ann-dl
-repo_url: https://github.com/usuario/ann-dl
-repo_name: usuario/ann-dl
+``` { .yaml title="mkdocs.yml" }
+site_name: ANN-DL · Entregas                  # TROCAR: título exibido no topo do site
+site_author: Seu Nome, Sobrenome              # TROCAR: seu nome (ou os nomes do grupo)
+site_url: https://usuario.github.io/ann-dl    # TROCAR: https://<seu-usuario>.github.io/<seu-repo>
+repo_url: https://github.com/usuario/ann-dl   # TROCAR: https://github.com/<seu-usuario>/<seu-repo>
+repo_name: usuario/ann-dl                     # TROCAR: <seu-usuario>/<seu-repo>
 ```
 
-E também a URL do Colab na seção `nav`, se for usar o exemplo.
+Há mais uma no `nav`, na URL do Colab. Para achar todas:
+
+``` shell
+grep -n "TROCAR" mkdocs.yml
+```
+
+O passo a passo completo está em [Publicação no GitHub Pages](#publicacao-no-github-pages).
 
 ---
 
@@ -147,44 +153,129 @@ Instale as dependências com:
     python -m pip install -r requirements.txt --upgrade
     ```
 
-## Deployment
+## Publicação no GitHub Pages
 
-O material utiliza o [mkdocs](https://www.mkdocs.org/) para gerar a documentação. Para visualizar a documentação, execute o comando:
+O site não é publicado a partir da `main`: o GitHub Actions constrói o HTML e o empurra para
+uma branch separada, `gh-pages`, e é ela que o GitHub Pages serve.
 
-``` shell
-mkdocs serve -o
+``` mermaid
+flowchart LR
+    push["git push<br/>branch main"] --> ci["GitHub Actions<br/>mkdocs gh-deploy --force"]
+    ci -->|escreve| gp["branch gh-pages<br/>(HTML gerado)"]
+    gp --> pages["GitHub Pages<br/>usuario.github.io/repo"]
 ```
 
-Para subir ao GitHub Pages, execute o comando:
+Isso significa que **você nunca edita a `gh-pages` à mão** — ela é reescrita a cada push.
+
+Os passos 1 a 4 são feitos **uma única vez**. Depois disso, publicar é dar `git push`.
+
+### Passo 1 — Repositório público e Actions habilitado
+
+Registre o repositório no formulário da disciplina **uma vez**, no começo do semestre, e o
+mantenha **público**: a correção lê o site e o repositório, e o GitHub Pages exige repositório
+público em contas gratuitas.
+
+!!! warning "Se você usou *Fork*, os workflows vêm desligados"
+
+    Em um fork, o GitHub desabilita o Actions por segurança. Abra a aba **Actions** do seu
+    repositório e clique em **I understand my workflows, go ahead and enable them**. Sem
+    isso, o push não dispara build nenhum e o site nunca aparece.
+
+    Usando **Use this template** em vez de *Fork*, o Actions já vem ligado — e o histórico
+    começa limpo, o que é preferível, já que o prazo é medido pelos seus commits.
+
+### Passo 2 — Dar permissão de escrita ao CI
+
+O workflow precisa **escrever** na branch `gh-pages`, e por padrão o token do Actions só tem
+permissão de leitura. Em **Settings → Actions → General → Workflow permissions**, marque
+**Read and write permissions** e salve.
+
+![Tela de Workflow permissions, com a opção Read and write permissions marcada](gitactions-workflow-permission.png)
+/// caption
+**Settings → Actions → General → Workflow permissions**
+///
+
+!!! failure "Sintoma de quem pulou este passo"
+
+    O build passa, mas o último passo falha com
+    `remote: Permission to <usuario>/<repo>.git denied to github-actions[bot]` ou
+    `error: failed to push some refs`. Volte aqui, marque a opção e re-execute o workflow
+    em **Actions → (o run que falhou) → Re-run all jobs**.
+
+O `permissions:` declarado no próprio workflow é o outro lado dessa configuração — ele pede
+ao GitHub o escopo de escrita no conteúdo do repositório:
+
+``` { .yaml title=".github/workflows/main.yaml" }
+--8<-- ".github/workflows/main.yaml"
+```
+
+### Passo 3 — Publicar
+
+``` shell
+git add .
+git commit -m "exercises/data: relatório do exercício 1"
+git push
+```
+
+Acompanhe em **Actions**. O primeiro run cria a branch `gh-pages`; leva 1–2 minutos.
+
+!!! danger "O prazo é o seu último commit"
+
+    O prazo de uma entrega é o *timestamp do último commit que toca a pasta daquela entrega*
+    — não a hora do formulário nem a da publicação. Commite ao longo do trabalho, não tudo
+    no minuto do prazo.
+
+### Passo 4 — Apontar o Pages para a branch `gh-pages`
+
+Só depois que o primeiro run terminar (a branch precisa existir): em **Settings → Pages**,
+em *Build and deployment*, escolha **Deploy from a branch**, selecione a branch **`gh-pages`**
+e a pasta **`/ (root)`**, e salve.
+
+![Tela de Settings → Pages com a branch gh-pages selecionada como fonte](github-pages-publish.png)
+/// caption
+**Settings → Pages → Build and deployment**
+///
+
+O endereço aparece no topo dessa mesma tela, no formato
+`https://<seu-usuario>.github.io/<seu-repo>/`. Ele precisa ser **idêntico** ao `site_url` do
+`mkdocs.yml` — é dele que o Material monta os links do menu e o `sitemap.xml`.
+
+### Passo 5 — Conferir
+
+- [ ] O run em **Actions** terminou com o check verde.
+- [ ] A branch `gh-pages` existe e tem um `index.html` na raiz.
+- [ ] A URL de **Settings → Pages** abre o site.
+- [ ] O menu tem as suas entregas, e nenhum link quebrado.
+- [ ] Nada de `usuario/ann-dl` sobrou: `grep -rn "TROCAR\|usuario/ann-dl" mkdocs.yml docs/`
+
+### Validando antes do push
+
+O CI publica mesmo com avisos; o modo estrito, não. Rode localmente antes de commitar:
+
+``` shell
+mkdocs serve -o                  # preview com recarga automática
+mkdocs build --strict            # falha em link quebrado ou snippet inexistente
+```
+
+### Publicação manual
+
+Se precisar publicar sem esperar o CI — ou se o Actions estiver indisponível:
 
 ``` shell
 mkdocs gh-deploy
 ```
 
-Esse repositório possui um workflow do GitHub Actions que executa o comando `mkdocs gh-deploy` sempre que houver um push na branch `main`. Assim, não é necessário executar esse comando manualmente. Toda vez que você fizer um **push** na branch `main`, a documentação será atualizada automaticamente no GitHub Pages.
+O comando constrói o site e empurra para a `gh-pages` usando **as suas** credenciais do Git.
+Ele não substitui o Passo 2: assim que você voltar a dar `push` na `main`, quem publica é o CI.
 
-!!! warning "Aviso 1"
+### Quando não funcionar
 
-    Para que o github actions funcione corretamente, é necessário que o repositório esteja configurado para que o *bot* `github-actions[bot]` tenha permissão de escrita. Você pode verificar isso nas configurações do repositório, na seção "Actions" e depois em "General". Certifique-se de que a opção "Workflow permissions" esteja definida como "Read and write permissions".
-
-    ![](gitactions-workflow-permission.png)
-
-!!! warning "Aviso 2"
-
-    Depois de publicar, caso não consiga acessar a página, verifique se o github pages está configurado corretamente. Vá até as configurações do repositório, na seção "Pages" e verifique se a branch `gh-pages` está selecionada como fonte. Se não estiver, selecione-a e salve as alterações.
-    
-    ![](github-pages-publish.png)
-
-!!! danger "Pay Attention"
-
-    No arquivo '`mkdocs.yml`, a seção `site_url` deve estar configurada corretamente para o seu repositório. Por exemplo, se o seu repositório estiver em `https://github.com/usuario/repositorio`, a seção `site_url` deve ser:
-
-    ``` yaml
-    site_url: https://usuario.github.io/repositorio
-    ```
-
-    Também, certifique-se de que a seção `repo_url` esteja configurada corretamente para o seu repositório. Por exemplo:
-
-    ``` yaml
-    repo_url: https://github.com/usuario/repositorio
-    ```
+| Sintoma | Causa provável |
+|---|---|
+| Nenhum run aparece em **Actions** | Workflows desabilitados no fork (Passo 1) |
+| Run falha com `Permission ... denied to github-actions[bot]` | Falta *Read and write permissions* (Passo 2) |
+| **Settings → Pages** não oferece a branch `gh-pages` | O primeiro run ainda não terminou (Passo 3) |
+| Site abre em 404 | Fonte do Pages não configurada (Passo 4), ou repositório privado |
+| Site abre, mas CSS e links estão quebrados | `site_url` diferente da URL real do Pages |
+| Build falha em `Snippet at path ... could not be found` | `--8<--` apontando para arquivo que não existe ou não foi commitado |
+| Notebook aparece sem os gráficos | O `.ipynb` foi commitado sem as saídas salvas — o CI roda com `execute: false` |
