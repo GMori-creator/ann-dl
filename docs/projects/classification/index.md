@@ -3,34 +3,46 @@ project: classification
 ai_use: "none"
 ---
 
-# Projeto — Classificação
+# 2. Classificação
 
-!!! abstract "Enunciado"
+!!! abstract "Entrega 2 de 3 do [Projeto](../index.md)"
+
+    **Data:** 05/11 · **Peso:** 60% da nota de equipe
 
     [Projects · Classificação :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/projects/classification/){:target='_blank'}
 
-!!! info "Equipe"
+!!! warning "Esta entrega é uma escolha"
 
-    | Nome | GitHub |
-    |------|--------|
-    | | |
-    | | |
+    A equipe entrega **classificação ou regressão**, não as duas. Se a escolha foi a outra,
+    apague esta pasta e a linha correspondente na `nav` do `mkdocs.yml`.
+
+Equipe e dataset ficam registrados na [página do projeto](../index.md). Aqui entra o que é
+específico desta tarefa. O EDA já respondeu o que há no dataset — **não repita o EDA**,
+referencie-o: [1. EDA](../eda/index.md).
 
 ## 1. Escolha do dataset
 
-Nome, URL da fonte, número de amostras e de features, e **por que** este dataset.
+Nome, URL da fonte, dimensões e por que ele sustenta uma tarefa de classificação não trivial.
 
 ## 2. Descrição do dataset
 
-Features, variável alvo, contexto do domínio e problemas identificados (ausências,
-desbalanceamento, escalas heterogêneas, vazamento potencial).
+Features, variável alvo, contexto do domínio e os problemas herdados do EDA que esta entrega
+precisa resolver.
 
 ## 3. Limpeza e normalização
 
+Execute o plano de pré-processamento definido no [EDA](../eda/index.md#8-plano-de-pre-processamento)
+e relate o que mudou em relação ao planejado — e por quê.
+
+!!! note "Desbalanceamento"
+
+    Se o alvo é desbalanceado, decida aqui como tratar (pesos na perda, reamostragem, ou
+    nada) e registre o efeito na seção 8.
+
 ## 4. Implementação da MLP
 
-Arquitetura, funções de ativação, função de perda e otimizador — com a justificativa de
-cada escolha.
+Arquitetura, funções de ativação, função de perda e otimizador, **com a justificativa de cada
+escolha**. Uma tabela de hiperparâmetros não explica nada sozinha.
 
 ``` mermaid
 flowchart LR
@@ -39,31 +51,54 @@ flowchart LR
     h2 --> out["Saída"]
 ```
 
+| | Escolha | Por quê |
+|---|---------|---------|
+| Camadas ocultas | | |
+| Ativação | | |
+| Função de perda | | |
+| Otimizador | | |
+| Learning rate | | |
+| Batch size | | |
+
 ## 5. Treinamento
 
-Loop de treino, hiperparâmetros e as dificuldades enfrentadas.
+O loop de treino e as dificuldades enfrentadas: instabilidade, perda que não desce,
+saturação da ativação, tempo de época. Diga o que você tentou e o que resolveu.
 
 ## 6. Estratégia de treino e teste
 
-Proporções do split, validação e como o *overfitting* foi contido.
+Proporções do split, esquema de validação e como o *overfitting* foi contido (early stopping,
+regularização, dropout). O split precisa ser o mesmo definido no EDA — se mudou, justifique.
 
 ## 7. Curvas de erro
 
-![Curvas de perda de treino e validação](figures/fig01-exemplo.svg)
+![Curvas de perda de treino e validação por época](figures/fig01-exemplo.svg)
 /// caption
 **Figura 1** — Perda de treino e de validação por época.
 ///
+
+Leia a curva no texto: em que época a validação para de melhorar, e o que a distância entre
+as duas curvas diz sobre a capacidade do modelo.
 
 ## 8. Métricas de avaliação
 
 | Métrica | Treino | Validação | Teste |
 |---------|--------|-----------|-------|
-| | | | |
+| Acurácia | | | |
+| Precisão | | | |
+| Revocação | | | |
+| F1 | | | |
+| ROC AUC | | | |
 
-Compare com um *baseline* simples e discuta o resultado.
+Inclua a matriz de confusão do conjunto de teste e comente os erros que mais custam no
+domínio — em dado desbalanceado, acurácia alta pode significar que o modelo aprendeu a
+ignorar a classe minoritária.
+
+Compare com o **baseline trivial** do EDA. Um modelo que não supera o baseline é um resultado
+— relate-o como tal, não o esconda.
 
 ## Conclusão
 
-Principais achados, limitações e o que faria a seguir.
+Principais achados, limitações e o que a equipe faria com mais tempo.
 
 ## Referências

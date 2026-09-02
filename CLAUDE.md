@@ -32,9 +32,26 @@ alteração pronta. Ele já roda limpo, com zero warnings; mantenha assim.
 Os slugs em `docs/exercises/` (`data`, `perceptron`, `mlp`, `vae`) e em `docs/projects/`
 (`classification`, `regression`, `generative`) são fixados pelas *submission guidelines* da
 disciplina, assim como o caminho `docs/<seção>/<slug>/index.md` e as subpastas `code/` e
-`figures/`. **Renomear qualquer um deles quebra a correção**, não só o site.
+`figures/`. **Renomear qualquer um deles quebra a correção**, não só o site. A exceção é
+`projects/eda/`: o overview de 2026.2 cobra a entrega de EDA, mas a disciplina ainda não
+publicou uma página com esse slug — se ela aparecer com outro nome, alinhe.
 
 Todo relatório abre com *front matter* obrigatório: `exercise:` (ou `project:`) e `ai_use:`.
+
+### Exercícios são 4; projeto é 1 com 3 entregas
+
+Fácil de errar: `docs/projects/` **não** contém três projetos independentes. É um único
+projeto de equipe, sobre um único dataset, entregue em três partes — EDA (17/09, 20%),
+Classificação **ou** Regressão (05/11, 60%), Generativo (20/11, 20%). O template traz as
+pastas de classificação e regressão porque a equipe escolhe uma; as duas aparecem na `nav`
+com um comentário mandando apagar a que sobrar.
+
+`docs/projects/index.md` é a página de visão geral (equipe, dataset, registro de decisões) e
+funciona como *section index* — daí o `navigation.indexes` nas features do tema.
+
+Datas e pesos vivem em <https://insper.github.io/ann-dl/2026.2/> e estão replicados em
+`docs/index.md`, `docs/projects/index.md` e no cabeçalho de cada entrega. Ao atualizá-los,
+atualize os quatro lugares.
 
 ### Uma entrega, um item de menu
 

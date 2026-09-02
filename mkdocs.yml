@@ -143,10 +143,14 @@ nav:
     - 3. MLP: exercises/mlp/index.md
     - 4. VAE: exercises/vae/index.md
 
-  - Projetos:
-    - Classificação: projects/classification/index.md
-    - Regressão: projects/regression/index.md
-    - Generativo: projects/generative/index.md
+  # O projeto é UM só, com três entregas ao longo do semestre.
+  - Projeto:
+    - projects/index.md
+    - 1. EDA: projects/eda/index.md
+    # Escolha UMA das duas linhas abaixo, e apague a outra (e a pasta que sobrar):
+    - 2. Classificação: projects/classification/index.md
+    - 2. Regressão: projects/regression/index.md
+    - 3. Generativo: projects/generative/index.md
 
   # Remova esta seção inteira quando não precisar mais dos exemplos.
   - Exemplos de uso:

@@ -20,12 +20,17 @@ docs/
     mlp/
     vae/
   projects/
-    classification/
-    regression/
-    generative/
+    index.md                     # visão geral: equipe, dataset, as 3 entregas
+    eda/                         # 17/09
+    classification/              # 05/11 — escolha classification OU regression
+    regression/                  #         e apague a pasta que sobrar
+    generative/                  # 20/11
 mkdocs.yml
 requirements.txt
 ```
+
+O projeto é **um só**: as três entregas de `projects/` compartilham equipe e dataset, e a de
+05/11 é *classificação ou regressão*, nunca as duas.
 
 ## Front matter obrigatório
 
@@ -38,7 +43,8 @@ ai_use: "descreva o uso de IA, ou 'none'"
 ---
 ```
 
-Nos projetos, troque `exercise:` por `project:`. Os dois campos são obrigatórios.
+Nos projetos, troque `exercise:` por `project:` (`eda`, `classification`, `regression`,
+`generative`). Os dois campos são obrigatórios.
 
 ## Colocando uma entrega no menu
 

@@ -3,67 +3,123 @@ project: generative
 ai_use: "none"
 ---
 
-# Projeto — Generativo
+# 3. Generativo
 
-!!! abstract "Enunciado"
+!!! abstract "Entrega 3 de 3 do [Projeto](../index.md)"
 
-    [Projects · Generativo :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/projects/generative/){:target='_blank'}
+    **Data:** 20/11 · **Peso:** 20% da nota de equipe
 
-!!! info "Equipe"
+    [Projects · Generative :material-open-in-new:](https://insper.github.io/ann-dl/2026.2/projects/generative/){:target='_blank'}
 
-    | Nome | GitHub |
-    |------|--------|
-    | | |
-    | | |
+!!! tip "A mudança de pergunta"
 
-## 1. Escolha do dataset
+    As entregas anteriores perguntavam $p(y \mid \mathbf{x})$ — dado um exemplo, qual o
+    rótulo. Esta pergunta $p(\mathbf{x})$: como os dados foram gerados, e como produzir
+    amostras novas que poderiam ter vindo do mesmo lugar. Isso muda tudo, inclusive a
+    avaliação: não existe "acurácia" de uma amostra gerada.
 
-Nome, URL da fonte, número de amostras e de features, e **por que** este dataset.
+Equipe e dataset ficam na [página do projeto](../index.md). Reaproveite o
+[EDA](../eda/index.md) — o que você descobriu sobre distribuições e desbalanceamento é
+exatamente o que o modelo generativo precisa reproduzir.
 
-## 2. Descrição do dataset
+## 1. Objetivo
 
-Features, variável alvo, contexto do domínio e problemas identificados (ausências,
-desbalanceamento, escalas heterogêneas, vazamento potencial).
+O que será gerado e para quê. Se a intenção é aumentar dados da classe minoritária
+identificada no EDA, diga isso — e a seção 7 vai medir se funcionou.
 
-## 3. Limpeza e normalização
+## 2. Modelo escolhido
 
-## 4. Implementação da MLP
+Qual família (VAE, GAN, difusão, flow matching) e **por que ela**, dado o tipo de dado e o
+tamanho do dataset.
 
-Arquitetura, funções de ativação, função de perda e otimizador — com a justificativa de
-cada escolha.
+| | |
+|---|---|
+| **Família** | |
+| **Por que esta** | |
+| **Alternativa descartada** | |
+| **Motivo do descarte** | |
+
+## 3. Arquitetura
+
+Encoder/decoder, gerador/discriminador ou rede de *denoising*, com dimensões e ativações.
 
 ``` mermaid
 flowchart LR
-    x["Entrada<br/>(n features)"] --> h1["Oculta 1<br/>ReLU"]
-    h1 --> h2["Oculta 2<br/>ReLU"]
-    h2 --> out["Saída"]
+    x["x<br/>(dado real)"] --> enc[Encoder]
+    enc --> z["z<br/>(espaço latente)"]
+    z --> dec[Decoder]
+    dec --> xr["x̂<br/>(reconstrução)"]
 ```
+
+Descreva o **espaço latente**: dimensão e por quê. Latente pequeno demais perde detalhe;
+grande demais vira cópia com ruído.
+
+## 4. Função objetivo
+
+Escreva a perda e explique cada termo. Num VAE, por exemplo:
+
+$$
+\mathcal{L} = \underbrace{\mathbb{E}_{q(\mathbf{z}\mid\mathbf{x})}[\log p(\mathbf{x}\mid\mathbf{z})]}_{\text{reconstrução}}
+- \beta \, \underbrace{D_{\mathrm{KL}}\!\left(q(\mathbf{z}\mid\mathbf{x}) \,\|\, p(\mathbf{z})\right)}_{\text{regularização do latente}}
+$$
+
+O equilíbrio entre os termos é uma decisão sua: diga qual valor usou e o que acontecia nos
+extremos que você testou.
 
 ## 5. Treinamento
 
-Loop de treino, hiperparâmetros e as dificuldades enfrentadas.
+Hiperparâmetros, tempo de treino e as patologias enfrentadas — *posterior collapse*,
+*mode collapse*, discriminador que domina, perda que diverge. Diga como diagnosticou cada
+uma e o que fez.
 
-## 6. Estratégia de treino e teste
-
-Proporções do split, validação e como o *overfitting* foi contido.
-
-## 7. Curvas de erro
-
-![Curvas de perda de treino e validação](figures/fig01-exemplo.svg)
+![Curvas de perda durante o treinamento](figures/fig01-exemplo.svg)
 /// caption
-**Figura 1** — Perda de treino e de validação por época.
+**Figura 1** — Componentes da perda ao longo das épocas.
 ///
 
-## 8. Métricas de avaliação
+## 6. Amostras geradas
 
-| Métrica | Treino | Validação | Teste |
-|---------|--------|-----------|-------|
-| | | | |
+Amostras **não selecionadas a dedo** — uma grade aleatória, não as melhores. Se houver
+seleção, declare o critério.
 
-Compare com um *baseline* simples e discuta o resultado.
+![Grade de amostras geradas pelo modelo](figures/fig01-exemplo.svg)
+/// caption
+**Figura 2** — Amostras geradas a partir de $\mathbf{z} \sim \mathcal{N}(0, I)$.
+///
+
+Se o espaço latente for interpretável, mostre uma interpolação entre dois pontos e comente
+se a transição é suave — transição abrupta indica latente mal estruturado.
+
+## 7. Avaliação
+
+Métricas generativas não medem acerto, medem **fidelidade e diversidade** — e as duas
+podem ser trocadas uma pela outra. Reporte as duas dimensões.
+
+| Métrica | Valor | O que mede |
+|---------|-------|------------|
+| | | |
+
+Complemente com comparações diretas contra os dados reais: distribuição das features geradas
+contra a original, estatísticas por classe, e uma inspeção qualitativa honesta.
+
+!!! question "Memorização"
+
+    Um modelo generativo que reproduz exemplos do treino não generalizou — decorou. Verifique
+    a distância entre cada amostra gerada e seu vizinho mais próximo no conjunto de treino, e
+    relate o resultado mesmo que seja desfavorável.
+
+### O modelo serviu ao propósito?
+
+Se o objetivo da seção 1 era aumentar dados, treine novamente o modelo da entrega de 05/11
+com os dados sintéticos e compare as métricas. Essa comparação é o teste real.
+
+| Cenário | Métrica principal |
+|---------|-------------------|
+| Só dados reais | |
+| Reais + sintéticos | |
 
 ## Conclusão
 
-Principais achados, limitações e o que faria a seguir.
+O que o modelo aprendeu sobre a distribuição, onde falhou, e o que a equipe faria diferente.
 
 ## Referências

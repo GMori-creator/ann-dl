@@ -19,6 +19,8 @@ docs/
     mlp/{index.md,code/,figures/}
     vae/{index.md,code/,figures/}
   projects/
+    index.md                   # visão geral: equipe, dataset, as 3 entregas
+    eda/{index.md,code/,figures/}
     classification/{index.md,code/,figures/}
     regression/{index.md,code/,figures/}
     generative/{index.md,code/,figures/}
@@ -27,6 +29,18 @@ docs/
 
 Os slugs de `exercises/` e `projects/` são fixos e casam com o site da disciplina. Não os
 renomeie.
+
+## As entregas de 2026.2
+
+**Exercícios** (individuais, 25% cada dentro dos 40% de exercícios da nota individual):
+Data (01/09), Perceptron (10/09), MLP (22/09), VAE (20/10).
+
+**Projeto** (equipe, um único dataset em três entregas): EDA (17/09, 20%),
+Classificação **ou** Regressão (05/11, 60%), Generativo (20/11, 20%). A prova de projeto
+(19/11) limita a nota de equipe — `Equipe = min(Projeto, Prova)`.
+
+O template traz as pastas de classificação e regressão; apague a que a equipe não escolher,
+da pasta e da `nav`.
 
 ## Setup
 
