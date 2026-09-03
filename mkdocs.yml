@@ -7,9 +7,9 @@
 # =============================================================================
 site_name: ANN-DL · Entregas                  # TROCAR: título exibido no topo do site
 site_author: Seu Nome, Sobrenome              # TROCAR: seu nome (ou os nomes do grupo)
-site_url: https://usuario.github.io/ann-dl    # TROCAR: https://<seu-usuario>.github.io/<seu-repo>
-repo_url: https://github.com/usuario/ann-dl   # TROCAR: https://github.com/<seu-usuario>/<seu-repo>
-repo_name: usuario/ann-dl                     # TROCAR: <seu-usuario>/<seu-repo>
+site_url: https://repo-classes.github.io/ann-dl    # TROCAR: https://<seu-usuario>.github.io/<seu-repo>
+repo_url: https://github.com/repo-classes/ann-dl/   # TROCAR: https://github.com/<seu-usuario>/<seu-repo>
+repo_name: repo-classes/ann-dl                     # TROCAR: <seu-usuario>/<seu-repo>
 
 theme:
   name: material
