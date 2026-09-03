@@ -18,7 +18,7 @@ Quem responde por este repositório. Os **exercícios são individuais**; a equi
 
 | Nome completo | E-mail | GitHub |
 |---------------|--------|--------|
-| | | |
+| Gabriel | | GMori-creator |
 
 !!! tip "Como usar este template"
 
