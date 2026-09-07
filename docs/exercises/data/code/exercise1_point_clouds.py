@@ -1,13 +1,3 @@
-"""Exercise 1 — Exploring class separability in 2D.
-
-Gera as 4 classes gaussianas do enunciado, salva a figura em ``figures/`` e
-imprime as métricas que alimentam a tabela *Results summary* do relatório.
-
-Uso (a partir da raiz do repositório):
-
-    python docs/exercises/data/code/exercise1_point_clouds.py
-"""
-
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -37,7 +27,7 @@ def generate(scale: float = 1.0) -> tuple[np.ndarray, np.ndarray]:
 
 
 def separation_ratio(X: np.ndarray, y: np.ndarray) -> float:
-    """Distância média entre centróides dividida pela dispersão média intraclasse."""
+    """Distancia media entre centroides dividida pela dispersao media intraclasse."""
     centroids = np.stack([X[y == c].mean(axis=0) for c in CLASSES])
     spreads = np.array([np.linalg.norm(X[y == c] - centroids[c], axis=1).mean() for c in CLASSES])
     pairwise = [
@@ -47,6 +37,14 @@ def separation_ratio(X: np.ndarray, y: np.ndarray) -> float:
         if i < j
     ]
     return float(np.mean(pairwise) / spreads.mean())
+
+
+def mixing_rate(X: np.ndarray, y: np.ndarray) -> float:
+    """Fracao de pontos cujo centroide mais proximo nao e o da propria classe."""
+    centroids = np.stack([X[y == c].mean(axis=0) for c in CLASSES])
+    d = np.linalg.norm(X[:, None, :] - centroids[None, :, :], axis=2)
+    nearest = np.argmin(d, axis=1)
+    return float(np.mean(nearest != y))
 
 
 def main() -> None:
@@ -64,9 +62,49 @@ def main() -> None:
     fig.savefig(FIGURES / "fig01-point-clouds.png", dpi=150)
     plt.close(fig)  # (2)!
 
-    for scale in (0.5, 1.0, 2.0):
+    print("=== Separation ratio e mixing rate por escala ===")
+    ratios, mixings, tested_scales = [], [], (0.5, 1.0, 2.0)
+    for scale in tested_scales:
         Xs, ys = generate(scale)
-        print(f"scale={scale:>4} | separation ratio = {separation_ratio(Xs, ys):.3f}")
+        sr = separation_ratio(Xs, ys)
+        mr = mixing_rate(Xs, ys)
+        ratios.append(sr)
+        mixings.append(mr)
+        print(f"scale={scale:>4} | separation ratio = {sr:.4f} | mixing rate = {mr:.4f}")
+
+    # Figura 1b - fronteiras tipo Voronoi (distancia minima aos centroides)
+    centroids = np.stack([X[y == c].mean(axis=0) for c in CLASSES])
+    xs_grid = np.linspace(X[:, 0].min() - 2, X[:, 0].max() + 2, 400)
+    ys_grid = np.linspace(X[:, 1].min() - 2, X[:, 1].max() + 2, 300)
+    XX, YY = np.meshgrid(xs_grid, ys_grid)
+    grid_pts = np.stack([XX.ravel(), YY.ravel()], axis=1)
+    d = np.linalg.norm(grid_pts[:, None, :] - centroids[None, :, :], axis=2)
+    region = np.argmin(d, axis=1).reshape(XX.shape)
+
+    fig, ax = plt.subplots(figsize=(7, 5.5))
+    ax.contourf(XX, YY, region, levels=np.arange(-0.5, 4, 1), alpha=0.15)
+    ax.contour(XX, YY, region, levels=np.arange(-0.5, 4, 1), colors="black", linewidths=1.0, linestyles="--")
+    for c in CLASSES:
+        ax.scatter(*X[y == c].T, s=14, alpha=0.75, label=f"Classe {c}")
+        ax.scatter(*centroids[c], marker="X", s=150, edgecolor="black", linewidth=1.2, zorder=5)
+    ax.set_xlabel("$x_1$")
+    ax.set_ylabel("$x_2$")
+    ax.set_title("Fronteiras tipo Voronoi (distancia minima aos centroides)")
+    ax.legend(loc="upper left")
+    fig.tight_layout()
+    fig.savefig(FIGURES / "fig01b-voronoi.png", dpi=150)
+    plt.close(fig)
+
+    # Figura 1c - mixing rate por escala
+    fig, ax = plt.subplots(figsize=(6, 4.5))
+    ax.plot(tested_scales, mixings, marker="o", color="#333333")
+    ax.set_xlabel("scale")
+    ax.set_ylabel("mixing rate")
+    ax.set_title("Mixing rate vs. fator de escala")
+    ax.grid(alpha=0.3)
+    fig.tight_layout()
+    fig.savefig(FIGURES / "fig01c-mixing-rate.png", dpi=150)
+    plt.close(fig)
 
 
 if __name__ == "__main__":
