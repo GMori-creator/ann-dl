@@ -164,6 +164,6 @@ nav:
     - Como montar o menu: examples/index.md
     - Notebook no menu: examples/notebook/data-exercise-1.ipynb
     # TROCAR "usuario/ann-dl" pelo seu repositório, senão o link abre o notebook de outra pessoa:
-    - Abrir no Colab ↗: https://colab.research.google.com/github/usuario/ann-dl/blob/main/docs/examples/notebook/data-exercise-1.ipynb
+    - Abrir no Colab ↗: https://colab.research.google.com/github/GMori-creator/ann-dl/blob/main/docs/examples/notebook/data-exercise-1.ipynb
 
   - Enunciados da disciplina ↗: https://insper.github.io/ann-dl/
