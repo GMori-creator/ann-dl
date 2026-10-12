@@ -5,12 +5,11 @@
 #  ANTES DE PUBLICAR: troque todas as linhas marcadas com "# TROCAR" abaixo.
 #  Passo a passo em docs/template/index.md > Publicação no GitHub Pages.
 # =============================================================================
-site_name: ANN-DL · Entregas                  # TROCAR: título exibido no topo do site
-site_author: Seu Nome, Sobrenome              # TROCAR: seu nome (ou os nomes do grupo)
-site_url: https://repo-classes.github.io/ann-dl    # TROCAR: https://<seu-usuario>.github.io/<seu-repo>
-repo_url: https://github.com/repo-classes/ann-dl/   # TROCAR: https://github.com/<seu-usuario>/<seu-repo>
-repo_name: repo-classes/ann-dl                     # TROCAR: <seu-usuario>/<seu-repo>
-
+site_name: ANN-DL · Entregas
+site_author: Gabriel, Mori
+site_url: https://gmori-creator.github.io/ann-dl
+repo_url: https://github.com/GMori-creator/ann-dl/
+repo_name: GMori-creator/ann-dl
 theme:
   name: material
   language: pt-BR
