@@ -1,0 +1,7 @@
+{
+ "metric": "MAE em d\u00f3lares (USD), no pre\u00e7o original",
+ "ref": "Ridge alpha=10",
+ "ref_mae": 60.99795059445594,
+ "rel": 0.05,
+ "threshold": 57.948053064733145
+}

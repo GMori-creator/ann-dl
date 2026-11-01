@@ -1,0 +1,8 @@
+{
+ "config": "256-128-64 | lr 0.001 | dropout 0,2",
+ "widths": "(256, 128, 64)",
+ "lr": 0.001,
+ "dropout": 0.2,
+ "weight_decay": NaN,
+ "val_MAE": 58.06264877319336
+}

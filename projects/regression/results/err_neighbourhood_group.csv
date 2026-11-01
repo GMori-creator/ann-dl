@@ -1,0 +1,6 @@
+neighbourhood_group,n,MAE,mediana_preco,vies,MAE_ln
+Manhattan,4301,82.93,150.0,-43.41,0.33
+Brooklyn,4035,43.21,91.0,-15.13,0.3
+Staten Island,78,37.6,67.0,-18.88,0.33
+Queens,1144,31.51,75.0,-8.05,0.29
+Bronx,219,28.38,65.0,-6.66,0.31
