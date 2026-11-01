@@ -20,7 +20,7 @@ Este relatório continua a [EDA](../eda/index.md): mesmo dataset (NYC Airbnb Ope
 
 !!! note "Correções da nota da EDA"
 
-    Até a escrita deste relatório a EDA ainda não tinha sido corrigida, então não haviam correções a incorporar; o pipeline foi importado exatamente como está no repositório.
+    Até a escrita deste relatório a EDA ainda não tinha sido corrigida, então não havia correções a incorporar; o pipeline foi importado exatamente como está no repositório.
 
 **Validação.** Como o teste só pode ser usado uma vez, a validação sai do treino da EDA: 15% do treino, estratificada pelos mesmos decis de preço, seed 42. O pré-processador é ajustado só nas linhas de treino restantes.
 
@@ -135,7 +135,7 @@ Figura 2. Perda de treino e de validação na melhor época para cada técnica d
 | 9 | 256-128-64 · lr 0.001 · wd 0,1 | 71.937 | 11 | 58,77 |
 | 10 | 128-64 · lr 0.003 · dropout 0,2 | 23.681 | 43 | 58,80 |
 
-(...)
+As 3 piores da busca (as posições 11 a 33 estão em `results/search.csv`):
 
 | # | configuração (camadas · lr · regularização) | parâmetros | melhor época | MAE val. (USD) |
 |---|---|---|---|---|
@@ -304,7 +304,7 @@ Figura 4. Esquerda: MAE no teste por faixa de preço real. Direita: importância
 
 !!! note "Bônus de competição"
 
-    Não reivindico o bônus: não identifiquei uma competição aberta associada a este dataset.
+    Não participei de nenhuma competição, então não reivindico o bônus.
 
 ## Código
 
