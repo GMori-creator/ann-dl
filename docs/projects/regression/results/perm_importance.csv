@@ -1,0 +1,11 @@
+,aumento_MAE,dp
+room_type,26.28,0.53
+availability_365,7.0,0.17
+neighbourhood,5.88,0.35
+minimum_nights,5.71,0.22
+longitude,5.6,0.24
+calculated_host_listings_count,4.85,0.29
+latitude,4.48,0.37
+neighbourhood_group,3.97,0.26
+number_of_reviews,3.84,0.27
+reviews_per_month,2.32,0.18

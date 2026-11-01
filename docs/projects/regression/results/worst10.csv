@@ -1,0 +1,11 @@
+,neighbourhood_group,neighbourhood,room_type,minimum_nights,availability_365,price,pred,abs_err
+2056,Manhattan,East Harlem,Entire home/apt,5,0,9999,113.8,9885.2
+4398,Manhattan,Upper West Side,Entire home/apt,30,83,10000,180.1,9819.9
+685,Brooklyn,East Flatbush,Private room,1,179,7500,58.3,7441.7
+4019,Manhattan,Upper East Side,Entire home/apt,1,146,7703,411.7,7291.3
+6878,Manhattan,Greenwich Village,Entire home/apt,1,0,6000,224.0,5776.0
+6341,Brooklyn,Bedford-Stuyvesant,Private room,114,347,4200,58.6,4141.4
+6744,Manhattan,West Village,Entire home/apt,1,173,4000,242.0,3758.0
+7556,Manhattan,Greenwich Village,Entire home/apt,30,180,3900,159.7,3740.3
+6544,Manhattan,Upper East Side,Entire home/apt,31,358,3600,228.9,3371.1
+6838,Manhattan,Upper West Side,Entire home/apt,1,158,3613,469.2,3143.8
